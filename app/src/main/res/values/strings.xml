@@ -13,4 +13,5 @@
     <string name="email_adress">Email Address</string>
     <string name="password">Password</string>
     <string name="signup">signup</string>
+    <string name="add_photos">ADD PHOTOS</string>
 </resources>

@@ -11,9 +11,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity
-            android:name=".SignupScreen"
-            android:theme="@style/NoActionBar" />
+        <activity android:name=".SignupScreen"
+            android:label="Register"/>
         <activity
             android:name=".LoginScreen"
             android:theme="@style/NoActionBar" />

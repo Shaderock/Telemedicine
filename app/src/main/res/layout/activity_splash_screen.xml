@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#07da5f"
+    android:background="@color/colorPrimary"
     tools:context=".SplashScreen">
 
     <TextView
@@ -15,7 +15,7 @@
         android:letterSpacing="0.075"
         android:text="@string/telemedicine"
         android:textAlignment="center"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/colorAccent"
         android:textScaleX="1.09"
         android:textSize="30sp"
         android:textStyle="normal|bold"
