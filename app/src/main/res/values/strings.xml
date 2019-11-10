@@ -10,4 +10,7 @@
     <string name="urgent">Urgent</string>
     <string name="sign_up">Sign Up</string>
     <string name="login">Login</string>
+    <string name="email_adress">Email Address</string>
+    <string name="password">Password</string>
+    <string name="signup">signup</string>
 </resources>

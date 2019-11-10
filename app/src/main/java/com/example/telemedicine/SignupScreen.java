@@ -11,6 +11,6 @@ public class SignupScreen extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_signup_screen);
+        setContentView(R.layout.activity_login_screen);
     }
 }
