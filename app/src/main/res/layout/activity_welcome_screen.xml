@@ -43,7 +43,7 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView13" />
+        app:layout_constraintTop_toBottomOf="@+id/loginBtn" />
 
     <TextView
         android:id="@+id/quote"
@@ -61,7 +61,7 @@
         app:layout_constraintTop_toBottomOf="@+id/welcome" />
 
     <ImageView
-        android:id="@+id/imageView12"
+        android:id="@+id/signUpBtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -74,16 +74,16 @@
         app:srcCompat="@drawable/signup_btn" />
 
     <ImageView
-        android:id="@+id/imageView13"
+        android:id="@+id/loginBtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="100dp"
         android:layout_marginEnd="20dp"
         android:contentDescription="@string/loginbutton"
-        app:layout_constraintEnd_toEndOf="@+id/imageView12"
-        app:layout_constraintStart_toStartOf="@+id/imageView12"
-        app:layout_constraintTop_toTopOf="@+id/imageView12"
+        app:layout_constraintEnd_toEndOf="@+id/signUpBtn"
+        app:layout_constraintStart_toStartOf="@+id/signUpBtn"
+        app:layout_constraintTop_toTopOf="@+id/signUpBtn"
         app:srcCompat="@drawable/login_btn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

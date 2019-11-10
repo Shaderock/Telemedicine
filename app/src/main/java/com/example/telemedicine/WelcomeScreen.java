@@ -2,21 +2,48 @@ package com.example.telemedicine;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class WelcomeScreen extends AppCompatActivity
 {
     private TextView welcome, quote, urgent;
+    private ImageView loginBtn, signUpBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome_screen);
+
         welcome = findViewById(R.id.welcome);
         quote = findViewById(R.id.quote);
         urgent = findViewById(R.id.urgent);
+        loginBtn = findViewById(R.id.loginBtn);
+        signUpBtn = findViewById(R.id.signUpBtn);
+
+        loginBtn.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(WelcomeScreen.this, LoginScreen.class);
+                startActivity(intent);
+            }
+        });
+
+        signUpBtn.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(WelcomeScreen.this, SignupScreen.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
