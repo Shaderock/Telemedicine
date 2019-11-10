@@ -35,7 +35,7 @@
         android:id="@+id/urgent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="57dp"
         android:letterSpacing="0.075"
         android:text="@string/urgent"
         android:textAllCaps="true"
@@ -60,30 +60,34 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/welcome" />
 
-    <ImageView
+    <Button
         android:id="@+id/signUpBtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="58dp"
-        android:layout_marginEnd="10dp"
-        android:contentDescription="@string/signupbutton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/view2"
-        app:layout_constraintTop_toBottomOf="@+id/quote"
-        app:srcCompat="@drawable/signup_btn" />
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="90dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/sign_up_btn"
+        android:text="@string/sign_up"
+        android:textAllCaps="false"
+        android:textColor="#07da5f"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/view2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quote" />
 
-    <ImageView
+    <Button
         android:id="@+id/loginBtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginEnd="20dp"
-        android:contentDescription="@string/loginbutton"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/login_btn"
+        android:text="@string/login"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/signUpBtn"
         app:layout_constraintStart_toStartOf="@+id/signUpBtn"
-        app:layout_constraintTop_toTopOf="@+id/signUpBtn"
-        app:srcCompat="@drawable/login_btn" />
+        app:layout_constraintTop_toBottomOf="@+id/signUpBtn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

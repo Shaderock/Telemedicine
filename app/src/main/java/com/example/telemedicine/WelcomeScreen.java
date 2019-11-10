@@ -6,13 +6,14 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 public class WelcomeScreen extends AppCompatActivity
 {
     private TextView welcome, quote, urgent;
-    private ImageView loginBtn, signUpBtn;
+    private Button loginBtn, signUpBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -63,5 +64,7 @@ public class WelcomeScreen extends AppCompatActivity
         welcome.setTypeface(proximanova_semibold);
         quote.setTypeface(proximanova_regular);
         urgent.setTypeface(proximanova_semibold);
+        loginBtn.setTypeface(proximanova_semibold);
+        signUpBtn.setTypeface(proximanova_semibold);
     }
 }
