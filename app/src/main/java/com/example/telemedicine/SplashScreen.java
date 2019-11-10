@@ -2,7 +2,9 @@ package com.example.telemedicine;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 
 public class SplashScreen extends AppCompatActivity
 {
@@ -12,5 +14,27 @@ public class SplashScreen extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash_layout);
+    }
+
+    @Override
+    protected void onStart()
+    {
+        super.onStart();
+
+        loadApp();
+    }
+
+    private void loadApp()
+    {
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                Intent intent = new Intent(SplashScreen.this, WelcomeScreen.class);
+                startActivity(intent);
+            }
+        }, 1000);
     }
 }

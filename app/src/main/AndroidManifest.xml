@@ -11,7 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".WelcomeScreen"></activity>
+        <activity
+            android:name=".WelcomeScreen"
+            android:theme="@style/NoActionBar" />
         <activity
             android:name=".SplashScreen"
             android:theme="@style/NoActionBar">
