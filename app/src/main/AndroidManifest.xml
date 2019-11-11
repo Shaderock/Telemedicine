@@ -12,7 +12,7 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".SignupScreen"
-            android:label="Register"/>
+            android:theme="@style/NoActionBar"/>
         <activity
             android:name=".LoginScreen"
             android:theme="@style/NoActionBar" />

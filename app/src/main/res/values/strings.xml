@@ -14,4 +14,16 @@
     <string name="password">Password</string>
     <string name="signup">signup</string>
     <string name="add_photos">ADD PHOTOS</string>
+    <string name="register">Register</string>
+    <string name="full_name">Full Name</string>
+    <string name="your_full_name">Your Full Name</string>
+    <string name="birthday">Birthday</string>
+    <string name="dd_mm_yy">dd/mm/yy</string>
+    <string name="email">Email</string>
+    <string name="your_email">Your Email</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="your_phone_number">Your Phone Number</string>
+    <string name="location_address">Location/Address</string>
+    <string name="your_location">Your Location</string>
+    <string name="next">Next</string>
 </resources>

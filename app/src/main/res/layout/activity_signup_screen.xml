@@ -6,15 +6,245 @@
     android:layout_height="match_parent"
     tools:context=".SignupScreen">
 
-    <Button
-        android:id="@+id/addPhotosBtn"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="50dp"
-        android:background="@drawable/circle_button"
-        android:text="@string/add_photos"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="37dp"
+        android:background="@color/colorPrimary"
+        android:clipToPadding="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:letterSpacing="0.05"
+            android:text="@string/register"
+            android:textColor="@color/colorAccent"
+            android:textSize="16sp"
+            tools:layout_editor_absoluteX="179dp"
+            tools:layout_editor_absoluteY="9dp" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/addPhotosBtn"
+                android:layout_width="149dp"
+                android:layout_height="149dp"
+                android:layout_marginTop="62dp"
+                android:background="@drawable/circle_button"
+                android:drawableTop="@drawable/ic_add_photos_icon"
+                android:drawablePadding="-22dp"
+                android:paddingTop="30dp"
+                android:text="@string/add_photos"
+                android:textColor="@color/colorInputFormName"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/fullName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="42dp"
+                android:letterSpacing="0.05"
+                android:text="@string/full_name"
+                android:textColor="@color/colorInputFormName"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/addPhotosBtn" />
+
+            <TextView
+                android:id="@+id/birthday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="27dp"
+                android:letterSpacing="0.05"
+                android:text="@string/birthday"
+                android:textColor="@color/colorInputFormName"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/fullName"
+                app:layout_constraintTop_toBottomOf="@+id/fullNameInput" />
+
+            <TextView
+                android:id="@+id/email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="27dp"
+                android:letterSpacing="0.05"
+                android:text="@string/email"
+                android:textColor="@color/colorInputFormName"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/fullName"
+                app:layout_constraintTop_toBottomOf="@+id/birthdayInput" />
+
+            <TextView
+                android:id="@+id/phoneNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:letterSpacing="0.05"
+                android:text="@string/phone_number"
+                android:textColor="@color/colorInputFormName"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/fullName"
+                app:layout_constraintTop_toBottomOf="@+id/emailInput" />
+
+            <TextView
+                android:id="@+id/location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="27dp"
+                android:letterSpacing="0.05"
+                android:text="@string/location_address"
+                android:textColor="@color/colorInputFormName"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/fullName"
+                app:layout_constraintTop_toBottomOf="@+id/phoneNumberInput" />
+
+            <EditText
+                android:id="@+id/fullNameInput"
+                android:layout_width="0dp"
+                android:layout_height="53.5dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/input_form"
+                android:ems="10"
+                android:hint="@string/your_full_name"
+                android:importantForAutofill="no"
+                android:inputType="textPersonName"
+                android:letterSpacing="0.025"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textColor="@color/colorInputFormHint"
+                android:textColorHint="@color/colorInputFormHint"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/fullName"
+                app:layout_constraintTop_toBottomOf="@+id/fullName" />
+
+            <EditText
+                android:id="@+id/birthdayInput"
+                android:layout_width="0dp"
+                android:layout_height="53.5dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/input_form"
+                android:ems="10"
+                android:hint="@string/dd_mm_yy"
+                android:importantForAutofill="no"
+                android:inputType="datetime"
+                android:letterSpacing="0.025"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textColor="@color/colorInputFormHint"
+                android:textColorHint="@color/colorInputFormHint"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="@+id/fullNameInput"
+                app:layout_constraintStart_toStartOf="@+id/fullNameInput"
+                app:layout_constraintTop_toBottomOf="@+id/birthday" />
+
+            <EditText
+                android:id="@+id/emailInput"
+                android:layout_width="0dp"
+                android:layout_height="53.5dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/input_form"
+                android:ems="10"
+                android:hint="@string/your_email"
+                android:importantForAutofill="no"
+                android:inputType="textWebEmailAddress"
+                android:letterSpacing="0.025"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textColor="@color/colorInputFormHint"
+                android:textColorHint="@color/colorInputFormHint"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="@+id/birthdayInput"
+                app:layout_constraintStart_toStartOf="@+id/fullNameInput"
+                app:layout_constraintTop_toBottomOf="@+id/email" />
+
+            <EditText
+                android:id="@+id/phoneNumberInput"
+                android:layout_width="0dp"
+                android:layout_height="53.5dp"
+                android:layout_marginTop="17dp"
+                android:background="@drawable/input_form"
+                android:ems="10"
+                android:hint="@string/your_phone_number"
+                android:importantForAutofill="no"
+                android:inputType="phone"
+                android:letterSpacing="0.025"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textColor="@color/colorInputFormHint"
+                android:textColorHint="@color/colorInputFormHint"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="@+id/emailInput"
+                app:layout_constraintStart_toStartOf="@+id/fullNameInput"
+                app:layout_constraintTop_toBottomOf="@+id/phoneNumber" />
+
+            <EditText
+                android:id="@+id/locationInput"
+                android:layout_width="0dp"
+                android:layout_height="53.5dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/input_form"
+                android:ems="10"
+                android:hint="@string/your_location"
+                android:importantForAutofill="no"
+                android:inputType="textPostalAddress"
+                android:letterSpacing="0.025"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textColor="@color/colorInputFormHint"
+                android:textColorHint="@color/colorInputFormHint"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="@+id/emailInput"
+                app:layout_constraintStart_toStartOf="@+id/fullNameInput"
+                app:layout_constraintTop_toBottomOf="@+id/location" />
+
+            <Button
+                android:id="@+id/nextBtn"
+                android:layout_width="0dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/rounded_green_btn_borderless"
+                android:letterSpacing="0.05"
+                android:text="@string/next"
+                android:textAllCaps="false"
+                android:textColor="@color/colorAccent"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/locationInput"
+                app:layout_constraintStart_toStartOf="@+id/locationInput"
+                app:layout_constraintTop_toBottomOf="@+id/locationInput" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
