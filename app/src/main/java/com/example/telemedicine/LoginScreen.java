@@ -45,19 +45,5 @@ public class LoginScreen extends AppCompatActivity
                 startActivity(intent);
             }
         });
-        setFonts();
-    }
-
-    private void setFonts()
-    {
-        Typeface proximanova_regular = Typeface.createFromAsset(getAssets(),
-                "fonts/proximanova-regular.otf");
-        Typeface proximanova_semibold = Typeface.createFromAsset(getAssets(),
-                "fonts/proximanova-semibold.otf");
-
-        emailInput.setTypeface(proximanova_regular);
-        passwordInput.setTypeface(proximanova_regular);
-        loginBtn.setTypeface(proximanova_semibold);
-        signUpBtn.setTypeface(proximanova_semibold);
     }
 }
