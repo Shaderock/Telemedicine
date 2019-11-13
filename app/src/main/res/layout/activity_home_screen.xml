@@ -38,7 +38,7 @@
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -69,7 +69,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="22dp"
-                android:layout_marginTop="135dp"
+                android:layout_marginTop="139dp"
                 android:fontFamily="@font/proximanova_semibold"
                 android:includeFontPadding="false"
                 android:letterSpacing="0.05"
@@ -84,7 +84,7 @@
                 android:id="@+id/desease"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="251dp"
+                android:layout_marginTop="253dp"
                 android:fontFamily="@font/proximanova_semibold"
                 android:includeFontPadding="false"
                 android:letterSpacing="0.05"
@@ -99,7 +99,7 @@
                 android:id="@+id/location"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="362dp"
+                android:layout_marginTop="368dp"
                 android:fontFamily="@font/proximanova_semibold"
                 android:includeFontPadding="false"
                 android:letterSpacing="0.05"
@@ -215,7 +215,7 @@
                 android:layout_height="53dp"
                 android:layout_marginStart="29dp"
                 android:layout_marginTop="638dp"
-                android:layout_marginBottom="32dp"
+                android:layout_marginBottom="39dp"
                 android:background="@drawable/btn_rounded_green_borderless"
                 android:fontFamily="@font/proximanova_semibold"
                 android:letterSpacing="0.05"
@@ -229,5 +229,18 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        app:itemIconSize="15dp"
+        app:itemIconTint="@drawable/nav_item_state_selector"
+        app:itemTextColor="@color/colorNavigationBarItem"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/navigation_items" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,4 +5,5 @@
     <color name="colorAccent">#ffffff</color>
     <color name="colorInputFormName">#37474e</color>
     <color name="colorInputFormHint">#8fa4ad</color>
+    <color name="colorNavigationBarItem">#607d8b</color>
 </resources>

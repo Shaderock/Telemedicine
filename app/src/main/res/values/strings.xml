@@ -26,7 +26,6 @@
     <string name="location_address">Location/Address</string>
     <string name="your_location">Your Location</string>
     <string name="next">Next</string>
-    <string name="home">Home</string>
     <string name="very_urgent">very urgent</string>
     <string name="name">Name</string>
     <string name="your_name">Your Name</string>
@@ -37,4 +36,8 @@
     <string name="description_optional">Description (Optional)</string>
     <string name="describe_here">Describe Here</string>
     <string name="request">Request</string>
+    <string name="home">Home</string>
+    <string name="notification">Notification</string>
+    <string name="schedule">Schedule</string>
+    <string name="profile">Profile</string>
 </resources>
