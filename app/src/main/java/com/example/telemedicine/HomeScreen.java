@@ -33,4 +33,8 @@ public class HomeScreen extends AppCompatActivity
 
         toolbar.setNavigationIcon(R.drawable.ic_more_horiz_white_24dp);
     }
+
+
+//    val badgeDrawable : BadgeDrawable =
+//    bottomNavigationView.showBadge(R.id.bottomNavigationClockMenuId) // menu item id
 }

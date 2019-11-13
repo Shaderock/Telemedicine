@@ -11,6 +11,9 @@
         android:title="@string/notification"
         android:visible="true" />
     <item
+        android:enabled="false"
+        android:title="" />
+    <item
         android:id="@+id/schedule"
         android:icon="@drawable/icon_schedule"
         android:title="@string/schedule"
