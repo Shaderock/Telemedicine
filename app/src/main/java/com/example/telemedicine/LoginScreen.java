@@ -32,6 +32,7 @@ public class LoginScreen extends AppCompatActivity
             {
                 Intent intent = new Intent(LoginScreen.this, HomeScreen.class);
                 startActivity(intent);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 finishAffinity();
             }
         });
@@ -43,6 +44,7 @@ public class LoginScreen extends AppCompatActivity
             {
                 Intent intent = new Intent(LoginScreen.this, SignupScreen.class);
                 startActivity(intent);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             }
         });
     }

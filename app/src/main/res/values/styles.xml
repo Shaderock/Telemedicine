@@ -21,4 +21,8 @@
         <item name="android:textSize">9sp</item>
     </style>
 
+    <style name="WhiteMaterial" parent="Theme.MaterialComponents">
+        <item name="colorOnSecondary">@color/colorAccent</item>
+    </style>
+
 </resources>

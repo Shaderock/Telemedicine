@@ -54,6 +54,7 @@ public class SignupScreen extends AppCompatActivity
                 Intent intent = new
                         Intent(SignupScreen.this, WelcomeScreen.class);
                 startActivity(intent);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 finishAffinity();
             }
         });

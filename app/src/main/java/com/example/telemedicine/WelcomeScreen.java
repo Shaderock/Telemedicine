@@ -28,6 +28,7 @@ public class WelcomeScreen extends AppCompatActivity
             {
                 Intent intent = new Intent(WelcomeScreen.this, LoginScreen.class);
                 startActivity(intent);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             }
         });
 
@@ -38,6 +39,7 @@ public class WelcomeScreen extends AppCompatActivity
             {
                 Intent intent = new Intent(WelcomeScreen.this, SignupScreen.class);
                 startActivity(intent);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             }
         });
     }

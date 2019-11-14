@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:clipToPadding="false"
+    android:theme="@style/WhiteMaterial"
     tools:context=".HomeScreen">
 
     <androidx.appcompat.widget.Toolbar
@@ -25,20 +26,27 @@
             android:id="@+id/toolbar_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_marginStart="155dp"
             android:fontFamily="@font/proximanova_semibold"
             android:letterSpacing="0.05"
             android:text="@string/home"
             android:textColor="@color/colorAccent"
-            android:textSize="16sp"
-            tools:layout_editor_absoluteX="179dp"
-            tools:layout_editor_absoluteY="9dp" />
+            android:textSize="16sp" />
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="105dp"
+            android:contentDescription="@string/morebutton"
+            android:src="@drawable/ic_more_horiz_white_24dp" />
+
+
     </androidx.appcompat.widget.Toolbar>
 
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/shadow"
+        app:layout_constraintBottom_toTopOf="@+id/CoordinatorLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -208,6 +216,8 @@
                 android:paddingTop="19dp"
                 android:paddingRight="22dp"
                 android:paddingBottom="19dp"
+                android:textColor="@color/colorInputFormHint"
+                android:textColorHint="@color/colorInputFormHint"
                 android:textSize="14.5sp"
                 app:layout_constraintEnd_toEndOf="@+id/locationInput"
                 app:layout_constraintStart_toStartOf="@+id/locationInput"
@@ -234,48 +244,54 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
-    <View
-        android:id="@+id/shadow"
-        android:layout_width="0dp"
-        android:layout_height="7.5dp"
-        android:background="@drawable/shadow"
-        app:layout_constraintBottom_toTopOf="@+id/navigation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/navigation"
-        android:layout_width="0dp"
-        android:layout_height="46dp"
-        android:clipChildren="false"
-        android:clipToPadding="false"
-        android:paddingTop="12dp"
-        android:paddingBottom="10dp"
-        android:textAlignment="gravity"
-        android:theme="@style/Navigation"
-        app:itemIconSize="24dp"
-        app:itemIconTint="@drawable/nav_item_state_selector"
-        app:itemTextColor="@drawable/nav_item_state_selector"
-        app:labelVisibilityMode="labeled"
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/CoordinatorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="56.5dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/navigation_items" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <View
+            android:id="@+id/shadow"
+            android:layout_width="match_parent"
+            android:layout_height="7.5dp"
+            android:background="@drawable/shadow" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/navigation"
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:layout_marginTop="7.5dp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:paddingTop="12dp"
+            android:paddingBottom="10dp"
+            android:textAlignment="gravity"
+            android:theme="@style/Navigation"
+            app:itemBackground="@color/colorAccent"
+            app:itemIconSize="26dp"
+            app:itemIconTint="@drawable/nav_item_state_selector"
+            app:itemTextColor="@drawable/nav_item_state_selector"
+            app:labelVisibilityMode="labeled"
+            app:menu="@menu/navigation_items" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton3"
-        style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
+        android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="7dp"
         android:clickable="true"
         android:focusable="true"
         app:backgroundTint="@color/colorPrimary"
         app:fabCustomSize="50dp"
-        app:layout_constraintBottom_toBottomOf="@+id/navigation"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@id/shadow"
+        app:layout_constraintTop_toTopOf="@id/CoordinatorLayout"
         app:srcCompat="@drawable/ic_add_white_18dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

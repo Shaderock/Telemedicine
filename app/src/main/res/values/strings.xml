@@ -40,4 +40,5 @@
     <string name="notification">Notification</string>
     <string name="schedule">Schedule</string>
     <string name="profile">Profile</string>
+    <string name="morebutton">moreButton</string>
 </resources>
