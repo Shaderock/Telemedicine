@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -32,6 +33,9 @@ public class HomeScreen extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
 
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragmentContainer, new RequestFragment()).commit();
+
         toolbar = findViewById(R.id.toolbar);
 
         nameInput = findViewById(R.id.nameInput);
@@ -42,18 +46,9 @@ public class HomeScreen extends AppCompatActivity
         request = findViewById(R.id.request);
 
         navigation = findViewById(R.id.navigation);
+        navigation.setOnNavigationItemSelectedListener(this);
 
         setBadge();
-    }
-
-    private void navigate(MenuItem item)
-    {
-        switch (item.getItemId()) {
-            case R.id.notification:
-                break;
-            case R.id.home:
-                break;
-        }
     }
 
     public void setBadge()
@@ -66,7 +61,25 @@ public class HomeScreen extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item)
     {
-        navigate(item);
-        return false;
+        switch (item.getItemId())
+        {
+            case R.id.notification:
+                break;
+            case R.id.home:
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragmentContainer, new HomeFragment()).commit();
+                toolbar = findViewById(R.id.toolbar);
+//                toolbar.setNavigationIcon(R.drawable.ic_arrow_back_white_18dp);
+//                toolbar.setNavigationOnClickListener(new View.OnClickListener()
+//                {
+//                    @Override
+//                    public void onClick(View v)
+//                    {
+//                        onBackPressed();
+//                    }
+//                });
+                break;
+        }
+        return true;
     }
 }
