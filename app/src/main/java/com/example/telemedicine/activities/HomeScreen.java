@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.example.telemedicine.fragments_home_screen.HomeFragment;
 import com.example.telemedicine.R;
+import com.example.telemedicine.fragments_home_screen.NotificationFragment;
 import com.example.telemedicine.fragments_home_screen.RequestFragment;
 import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -73,6 +74,8 @@ public class HomeScreen extends AppCompatActivity
         switch (item.getItemId())
         {
             case R.id.notification:
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragmentContainer, new NotificationFragment()).commit();
                 break;
             case R.id.home:
                 getSupportFragmentManager().beginTransaction()
