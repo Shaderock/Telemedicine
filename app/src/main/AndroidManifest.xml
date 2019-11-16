@@ -12,19 +12,19 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
-            android:name=".HomeScreen"
+            android:name=".activities.HomeScreen"
             android:theme="@style/NoActionBar" />
         <activity
-            android:name=".SignupScreen"
+            android:name=".activities.SignupScreen"
             android:theme="@style/NoActionBar" />
         <activity
-            android:name=".LoginScreen"
+            android:name=".activities.LoginScreen"
             android:theme="@style/NoActionBar" />
         <activity
-            android:name=".WelcomeScreen"
+            android:name=".activities.WelcomeScreen"
             android:theme="@style/NoActionBar" />
         <activity
-            android:name=".SplashScreen"
+            android:name=".activities.SplashScreen"
             android:theme="@style/NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

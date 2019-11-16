@@ -1,11 +1,9 @@
-package com.example.telemedicine;
+package com.example.telemedicine.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import android.content.Intent;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,6 +11,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.telemedicine.fragments_home_screen.HomeFragment;
+import com.example.telemedicine.R;
+import com.example.telemedicine.fragments_home_screen.RequestFragment;
 import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -38,7 +39,7 @@ public class HomeScreen extends AppCompatActivity
         setContentView(R.layout.activity_home_screen);
 
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.fragmentContainer, new RequestFragment()).commit();
+                .replace(R.id.fragmentContainer, new HomeFragment()).commit();
 
         toolbar = findViewById(R.id.toolbar);
         toolbarTitle = findViewById(R.id.toolbar_title);

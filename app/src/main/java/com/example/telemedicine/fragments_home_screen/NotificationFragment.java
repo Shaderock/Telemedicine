@@ -1,4 +1,4 @@
-package com.example.telemedicine;
+package com.example.telemedicine.fragments_home_screen;
 
 
 import android.os.Bundle;
@@ -9,12 +9,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.telemedicine.R;
 
-public class RequestFragment extends Fragment
+public class NotificationFragment extends Fragment
 {
 
 
-    public RequestFragment()
+    public NotificationFragment()
     {
         // Required empty public constructor
     }
@@ -25,7 +26,7 @@ public class RequestFragment extends Fragment
                              Bundle savedInstanceState)
     {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_request, container, false);
+        return inflater.inflate(R.layout.fragment_notification, container, false);
     }
 
 }

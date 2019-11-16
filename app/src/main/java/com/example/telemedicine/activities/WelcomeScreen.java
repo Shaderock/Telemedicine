@@ -1,13 +1,13 @@
-package com.example.telemedicine;
+package com.example.telemedicine.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
+
+import com.example.telemedicine.R;
 
 public class WelcomeScreen extends AppCompatActivity
 {

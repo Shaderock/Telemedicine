@@ -7,7 +7,7 @@
     android:focusable="true"
     android:focusableInTouchMode="true"
     android:background="@color/colorPrimary"
-    tools:context=".LoginScreen">
+    tools:context=".activities.LoginScreen">
 
     <View
         android:id="@+id/view4"
