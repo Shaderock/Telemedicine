@@ -15,17 +15,21 @@ import android.widget.TextView;
 
 import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class HomeScreen extends AppCompatActivity
-        implements BottomNavigationView.OnNavigationItemSelectedListener
+        implements BottomNavigationView.OnNavigationItemSelectedListener,
+        FloatingActionButton.OnClickListener
 {
     private Toolbar toolbar;
+    private TextView toolbarTitle;
     private EditText nameInput, deseaseInput,
             locationInput, descriptionInput;
     private Button request;
     private BadgeDrawable badgeDrawable;
     private int menuItemId;
     private BottomNavigationView navigation;
+    private FloatingActionButton fab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -37,6 +41,7 @@ public class HomeScreen extends AppCompatActivity
                 .replace(R.id.fragmentContainer, new RequestFragment()).commit();
 
         toolbar = findViewById(R.id.toolbar);
+        toolbarTitle = findViewById(R.id.toolbar_title);
 
         nameInput = findViewById(R.id.nameInput);
         deseaseInput = findViewById(R.id.deseaseInput);
@@ -44,6 +49,9 @@ public class HomeScreen extends AppCompatActivity
         descriptionInput = findViewById(R.id.descriptionInput);
 
         request = findViewById(R.id.request);
+
+        fab = findViewById(R.id.fab);
+        fab.setOnClickListener(this);
 
         navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(this);
@@ -68,18 +76,20 @@ public class HomeScreen extends AppCompatActivity
             case R.id.home:
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.fragmentContainer, new HomeFragment()).commit();
-                toolbar = findViewById(R.id.toolbar);
-//                toolbar.setNavigationIcon(R.drawable.ic_arrow_back_white_18dp);
-//                toolbar.setNavigationOnClickListener(new View.OnClickListener()
-//                {
-//                    @Override
-//                    public void onClick(View v)
-//                    {
-//                        onBackPressed();
-//                    }
-//                });
                 break;
         }
         return true;
+    }
+
+    @Override
+    public void onClick(View v)
+    {
+        switch (v.getId())
+        {
+            case R.id.fab:
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragmentContainer, new RequestFragment()).commit();
+                break;
+        }
     }
 }

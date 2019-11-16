@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".RequestFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -15,20 +15,22 @@
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:background="@color/colorPrimary"
-            android:clipToPadding="true"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
-            android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingEnd="20dp"
+                android:paddingStart="10dp">
+
             <TextView
                 android:id="@+id/toolbar_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="155dp"
+                android:layout_gravity="center"
                 android:fontFamily="@font/proximanova_semibold"
                 android:letterSpacing="0.05"
                 android:text="@string/home"
@@ -38,9 +40,11 @@
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="match_parent"
-                android:layout_marginStart="105dp"
+                android:layout_gravity="end"
                 android:contentDescription="@string/morebutton"
                 android:src="@drawable/ic_more_horiz_white_24dp" />
+
+            </FrameLayout>
 
         </androidx.appcompat.widget.Toolbar>
 
