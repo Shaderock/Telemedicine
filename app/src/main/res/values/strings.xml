@@ -5,6 +5,11 @@
     <string name="Quote">Lorem ipsum dolor sit amet, conse \n
         ctetur adipiscing elit, t. Ut enim ad veni\n
         am, quis nostrud exercitation ullamco</string>
+    <string name="Quote_notif">Lorem ipsum dolor sit amet, consectetur \n
+        adipiscing elit, t. Ut enim ad minim venia\n
+        m, quis nostrud exercitation ullamco</string>
+    <string name="Approvement">Your Request Has Been \n
+        Approved</string>
     <string name="signupbutton">signUpButton</string>
     <string name="loginbutton">loginButton</string>
     <string name="urgent">Urgent</string>
@@ -48,4 +53,10 @@
     <string name="backbutton">backButton</string>
     <string name="icon_star">icon_star</string>
     <string name="address">address</string>
+    <string name="imageapprove">imageApprove</string>
+    <string name="request_details">Request Details</string>
+    <string name="description">Description</string>
+    <string name="doctor">Doctor</string>
+    <string name="confirm">Confirm</string>
+    <string name="cancel_request">Cancel Request</string>
 </resources>

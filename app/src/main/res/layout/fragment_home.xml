@@ -63,7 +63,6 @@
             android:paddingStart="13dp"
             android:paddingTop="15dp"
             android:paddingEnd="15dp"
-            android:paddingBottom="19dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

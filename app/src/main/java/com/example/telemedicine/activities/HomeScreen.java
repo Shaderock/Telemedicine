@@ -45,7 +45,7 @@ public class HomeScreen extends AppCompatActivity
         toolbar = findViewById(R.id.toolbar);
         toolbarTitle = findViewById(R.id.toolbar_title);
 
-        nameInput = findViewById(R.id.nameInput);
+        nameInput = findViewById(R.id.nameOutput);
         deseaseInput = findViewById(R.id.deseaseInput);
         locationInput = findViewById(R.id.locationInput);
         descriptionInput = findViewById(R.id.descriptionInput);

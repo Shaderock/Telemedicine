@@ -8,4 +8,5 @@
     <color name="colorNavigationBarItem">#607d8b</color>
     <color name="colorDoctorList">#f7f8f8</color>
     <color name="colorDoctorCardShadow">#eeefef</color>
+    <color name="colorGivenInfo">#90a4ae</color>
 </resources>

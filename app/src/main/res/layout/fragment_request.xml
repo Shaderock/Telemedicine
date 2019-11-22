@@ -141,7 +141,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <EditText
-                    android:id="@+id/nameInput"
+                    android:id="@+id/nameOutput"
                     android:layout_width="0dp"
                     android:layout_height="48.5dp"
                     android:layout_marginTop="172dp"
@@ -179,8 +179,8 @@
                     android:textColor="@color/colorInputFormHint"
                     android:textColorHint="@color/colorInputFormHint"
                     android:textSize="14.5sp"
-                    app:layout_constraintEnd_toEndOf="@+id/nameInput"
-                    app:layout_constraintStart_toStartOf="@+id/nameInput"
+                    app:layout_constraintEnd_toEndOf="@+id/nameOutput"
+                    app:layout_constraintStart_toStartOf="@+id/nameOutput"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <EditText
