@@ -128,10 +128,10 @@
                     android:textSize="14.5sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView3" />
+                    app:layout_constraintTop_toBottomOf="@+id/approvement" />
 
                 <TextView
-                    android:id="@+id/textView3"
+                    android:id="@+id/approvement"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="43dp"
@@ -146,7 +146,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/imageApprove" />
 
                 <TextView
-                    android:id="@+id/textView5"
+                    android:id="@+id/userName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="26dp"
@@ -156,8 +156,8 @@
                     android:text="@string/name"
                     android:textColor="@color/colorInputFormName"
                     android:textSize="17.45sp"
-                    app:layout_constraintStart_toStartOf="@+id/textView4"
-                    app:layout_constraintTop_toBottomOf="@+id/textView4" />
+                    app:layout_constraintStart_toStartOf="@+id/requestDetails"
+                    app:layout_constraintTop_toBottomOf="@+id/requestDetails" />
 
                 <TextView
                     android:id="@+id/textView7"
@@ -170,7 +170,7 @@
                     android:text="@string/desease"
                     android:textColor="@color/colorInputFormName"
                     android:textSize="17.45sp"
-                    app:layout_constraintStart_toStartOf="@+id/textView5"
+                    app:layout_constraintStart_toStartOf="@id/userName"
                     app:layout_constraintTop_toBottomOf="@+id/nameOutput" />
 
                 <TextView
@@ -184,7 +184,7 @@
                     android:text="@string/location"
                     android:textColor="@color/colorInputFormName"
                     android:textSize="17.45sp"
-                    app:layout_constraintStart_toStartOf="@+id/textView5"
+                    app:layout_constraintStart_toStartOf="@id/userName"
                     app:layout_constraintTop_toBottomOf="@+id/deseaseOutput" />
 
                 <TextView
@@ -198,7 +198,7 @@
                     android:text="@string/description"
                     android:textColor="@color/colorInputFormName"
                     android:textSize="17.45sp"
-                    app:layout_constraintStart_toStartOf="@+id/textView5"
+                    app:layout_constraintStart_toStartOf="@id/userName"
                     app:layout_constraintTop_toBottomOf="@+id/locationOutput" />
 
                 <TextView
@@ -212,8 +212,8 @@
                     android:text="Jojon Suehndra"
                     android:textColor="@color/colorGivenInfo"
                     android:textSize="18.45sp"
-                    app:layout_constraintStart_toStartOf="@+id/textView5"
-                    app:layout_constraintTop_toBottomOf="@+id/textView5" />
+                    app:layout_constraintStart_toStartOf="@id/userName"
+                    app:layout_constraintTop_toBottomOf="@id/userName" />
 
                 <TextView
                     android:id="@+id/deseaseOutput"
@@ -226,7 +226,7 @@
                     android:text="Sore Eyes"
                     android:textColor="@color/colorGivenInfo"
                     android:textSize="18.45sp"
-                    app:layout_constraintStart_toStartOf="@+id/textView5"
+                    app:layout_constraintStart_toStartOf="@id/userName"
                     app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
                 <TextView
@@ -240,7 +240,7 @@
                     android:text="St. Broxlyn 212"
                     android:textColor="@color/colorGivenInfo"
                     android:textSize="18.45sp"
-                    app:layout_constraintStart_toStartOf="@+id/textView5"
+                    app:layout_constraintStart_toStartOf="@id/userName"
                     app:layout_constraintTop_toBottomOf="@+id/location" />
 
                 <TextView
@@ -256,11 +256,11 @@
                     android:textColor="@color/colorGivenInfo"
                     android:textSize="18.45sp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="@+id/textView5"
+                    app:layout_constraintStart_toStartOf="@id/userName"
                     app:layout_constraintTop_toBottomOf="@+id/description" />
 
                 <TextView
-                    android:id="@+id/textView4"
+                    android:id="@+id/requestDetails"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="26dp"
@@ -274,7 +274,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/quote" />
 
                 <TextView
-                    android:id="@+id/textView13"
+                    android:id="@+id/doctor"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="42dp"
@@ -283,7 +283,7 @@
                     android:text="@string/doctor"
                     android:textColor="@color/colorPrimary"
                     android:textSize="18.45sp"
-                    app:layout_constraintStart_toStartOf="@+id/textView4"
+                    app:layout_constraintStart_toStartOf="@+id/requestDetails"
                     app:layout_constraintTop_toBottomOf="@+id/descriptionOutput" />
 
                 <androidx.cardview.widget.CardView
@@ -297,7 +297,7 @@
                     app:cardMaxElevation="0dp"
                     app:layout_constraintEnd_toEndOf="@+id/descriptionOutput"
                     app:layout_constraintStart_toStartOf="@+id/descriptionOutput"
-                    app:layout_constraintTop_toBottomOf="@+id/textView13">
+                    app:layout_constraintTop_toBottomOf="@+id/doctor">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
