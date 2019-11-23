@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorAccent"
     tools:context=".fragments_home_screen.DoctorDetailsFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -34,7 +35,7 @@
                     android:layout_gravity="center"
                     android:fontFamily="@font/proximanova_semibold"
                     android:letterSpacing="0.05"
-                    android:text="Doctor Details"
+                    android:text="@string/doctor_details"
                     android:textColor="@color/colorAccent"
                     android:textSize="16sp" />
 
@@ -72,21 +73,25 @@
                     android:id="@+id/confirm"
                     android:layout_width="0dp"
                     android:layout_height="53.4dp"
-                    android:layout_marginTop="53dp"
+                    android:layout_marginTop="31dp"
+                    android:layout_marginBottom="25dp"
                     android:background="@drawable/btn_rounded_green_borderless"
                     android:fontFamily="@font/proximanova_semibold"
+                    android:letterSpacing="0.05"
                     android:text="@string/request"
                     android:textAllCaps="false"
                     android:textColor="@color/colorAccent"
                     android:textSize="16.5sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="@id/doctorCard"
                     app:layout_constraintRight_toRightOf="@id/doctorCard"
-                    app:layout_constraintTop_toBottomOf="@id/map" />
+                    app:layout_constraintTop_toBottomOf="@id/mapLayout" />
 
                 <TextView
                     android:id="@+id/location"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="45dp"
                     android:fontFamily="@font/proximanova_semibold"
                     android:gravity="center_horizontal"
                     android:letterSpacing="0.05"
@@ -100,10 +105,9 @@
                     android:id="@+id/description"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="27dp"
+                    android:layout_marginTop="28dp"
                     android:fontFamily="@font/proximanova_semibold"
                     android:gravity="center_horizontal"
-                    android:letterSpacing="0.05"
                     android:text="@string/short_description"
                     android:textColor="@color/colorInputFormName"
                     android:textSize="17.45sp"
@@ -114,38 +118,71 @@
                     android:id="@+id/locationOutput"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="10dp"
+                    android:drawableLeft="@drawable/ic_address"
+                    android:drawablePadding="5dp"
                     android:fontFamily="@font/proximanova_regular"
-                    android:gravity="center_horizontal"
+                    android:gravity="center_vertical"
                     android:letterSpacing="0.05"
                     android:text="St. Broxlyn 212"
-                    android:textColor="@color/colorGivenInfo"
-                    android:textSize="18.45sp"
+                    android:textColor="@color/colorNavigationBarItem"
+                    android:textSize="15.5sp"
                     app:layout_constraintLeft_toLeftOf="@id/location"
                     app:layout_constraintTop_toBottomOf="@+id/location" />
 
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/map"
-                    android:layout_width="310dp"
-                    android:layout_height="195.7dp"
+                <FrameLayout
+                    android:id="@+id/mapLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="17dp"
                     app:layout_constraintLeft_toLeftOf="@id/doctorCard"
                     app:layout_constraintRight_toRightOf="@id/doctorCard"
-                    app:layout_constraintTop_toBottomOf="@id/locationOutput"
-                    app:srcCompat="@drawable/map" />
+                    app:layout_constraintTop_toBottomOf="@id/locationOutput">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/map"
+                        android:layout_width="match_parent"
+                        android:layout_height="195dp"
+                        app:srcCompat="@drawable/map" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="17dp"
+                        android:layout_height="17dp"
+                        android:layout_marginStart="109dp"
+                        android:layout_marginTop="83dp"
+                        android:background="@drawable/btn_rounded_green_borderless" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="46dp"
+                        android:layout_height="46dp"
+                        android:layout_marginStart="93.5dp"
+                        android:layout_marginTop="69.5dp"
+                        android:alpha="0.3"
+                        android:background="@drawable/btn_rounded_green_borderless" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="46dp"
+                        android:layout_height="46dp"
+                        android:layout_marginStart="93.5dp"
+                        android:layout_marginTop="69.5dp"
+                        android:background="@drawable/btn_rounded_not_filled_green" />
+
+                </FrameLayout>
 
                 <TextView
                     android:id="@+id/descriptionOutput"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="54dp"
                     android:fontFamily="@font/proximanova_regular"
-                    android:lineSpacingExtra="5sp"
+                    android:lineSpacingExtra="11sp"
                     android:singleLine="false"
-                    android:text="Aku ingin menjadi setitik awan kecil di langint bersama mentari yaga hah"
-                    android:textColor="@color/colorGivenInfo"
-                    android:textSize="18.45sp"
-                    app:layout_constraintLeft_toLeftOf="@id/doctorCard"
-                    app:layout_constraintRight_toRightOf="@id/doctorCard"
+                    android:text="@string/Quote_notif"
+                    android:textColor="@color/colorNavigationBarItem"
+                    android:textSize="14.45sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/description"
                     app:layout_constraintTop_toBottomOf="@id/description" />
 
                 <androidx.cardview.widget.CardView
@@ -153,6 +190,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="27dp"
+                    android:layout_marginTop="20dp"
                     android:layout_marginRight="27dp"
                     android:elevation="0dp"
                     app:cardCornerRadius="0dp"
@@ -166,6 +204,16 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
+                        <View
+                            android:id="@+id/line"
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="16dp"
+                            android:background="#eceff1"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/avatar" />
+
                         <de.hdodenhof.circleimageview.CircleImageView
                             android:id="@+id/avatar"
                             android:layout_width="65dp"
@@ -174,7 +222,7 @@
                             android:layout_marginTop="16dp"
                             android:layout_marginBottom="16dp"
                             android:src="@drawable/avatar"
-                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintBottom_toTopOf="@id/line"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
