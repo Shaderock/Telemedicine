@@ -16,18 +16,21 @@ import android.widget.RelativeLayout;
 import android.widget.Toolbar;
 
 import com.example.telemedicine.HomeRecyclerViewAdapter;
+import com.example.telemedicine.Interfaces.CardOnClickListener;
+import com.example.telemedicine.Interfaces.IHomeFragment;
 import com.example.telemedicine.R;
 import com.example.telemedicine.models.Doctor;
 
 import java.util.ArrayList;
 
-public class HomeFragment extends Fragment
+public class HomeFragment extends Fragment implements CardOnClickListener
 {
 
     private RecyclerView recyclerView;
     private LinearLayoutManager linearLayoutManager;
     private HomeRecyclerViewAdapter recyclerViewAdapter;
     private ArrayList<Doctor> doctors = new ArrayList<>();
+    private IHomeFragment iHomeFragment;
 
     public HomeFragment()
     {
@@ -71,7 +74,21 @@ public class HomeFragment extends Fragment
         linearLayoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerViewAdapter = new HomeRecyclerViewAdapter(getActivity(), doctors);
+        recyclerViewAdapter.setCardOnClickListener(this);
         recyclerView.setAdapter(recyclerViewAdapter);
     }
 
+    @Override
+    public void onClick()
+    {
+        if (iHomeFragment != null)
+        {
+            iHomeFragment.onCardClick();
+        }
+    }
+
+    public void setiHomeFragment(IHomeFragment iHomeFragment)
+    {
+        this.iHomeFragment = iHomeFragment;
+    }
 }

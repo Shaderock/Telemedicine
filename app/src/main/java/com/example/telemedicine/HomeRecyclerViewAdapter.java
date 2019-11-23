@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.example.telemedicine.Interfaces.CardOnClickListener;
 import com.example.telemedicine.models.Doctor;
 
 import java.util.ArrayList;
@@ -24,6 +25,7 @@ public class HomeRecyclerViewAdapter extends
 
     private Context context;
     private ArrayList<Doctor> doctors;
+    private CardOnClickListener cardOnClickListener;
 
     public HomeRecyclerViewAdapter(Context context, ArrayList<Doctor> doctors)
     {
@@ -70,6 +72,11 @@ public class HomeRecyclerViewAdapter extends
                 Log.d("log", "onClick: clicked on: " +
                         doctors.get(position).getName() +
                         " position " + position);
+                if (cardOnClickListener != null)
+                {
+                    cardOnClickListener.onClick();
+                    Log.d("log", "cardOnClickListener != null");
+                }
             }
         });
     }
@@ -79,6 +86,12 @@ public class HomeRecyclerViewAdapter extends
     {
         return doctors.size();
     }
+
+    public void setCardOnClickListener(CardOnClickListener cardOnClickListener)
+    {
+        this.cardOnClickListener = cardOnClickListener;
+    }
+
 
     public class ViewHolder extends RecyclerView.ViewHolder
     {

@@ -11,6 +11,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.telemedicine.Interfaces.CardOnClickListener;
+import com.example.telemedicine.Interfaces.IHomeFragment;
+import com.example.telemedicine.fragments_home_screen.DoctorDetailsFragment;
 import com.example.telemedicine.fragments_home_screen.HomeFragment;
 import com.example.telemedicine.R;
 import com.example.telemedicine.fragments_home_screen.NotificationFragment;
@@ -21,7 +24,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class HomeScreen extends AppCompatActivity
         implements BottomNavigationView.OnNavigationItemSelectedListener,
-        FloatingActionButton.OnClickListener
+        FloatingActionButton.OnClickListener, IHomeFragment
 {
     private Toolbar toolbar;
     private TextView toolbarTitle;
@@ -39,8 +42,7 @@ public class HomeScreen extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
 
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.fragmentContainer, new HomeFragment()).commit();
+        replaceToHomeFragment();
 
         toolbar = findViewById(R.id.toolbar);
         toolbarTitle = findViewById(R.id.toolbar_title);
@@ -61,6 +63,14 @@ public class HomeScreen extends AppCompatActivity
         setBadge();
     }
 
+    private void replaceToHomeFragment()
+    {
+        HomeFragment homeFragment = new HomeFragment();
+        homeFragment.setiHomeFragment(this);
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragmentContainer, homeFragment).commit();
+    }
+
     public void setBadge()
     {
         menuItemId = navigation.getMenu().getItem(1).getItemId();  //0 menu item index.
@@ -78,8 +88,7 @@ public class HomeScreen extends AppCompatActivity
                         .replace(R.id.fragmentContainer, new NotificationFragment()).commit();
                 break;
             case R.id.home:
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.fragmentContainer, new HomeFragment()).commit();
+                replaceToHomeFragment();
                 break;
         }
         return true;
@@ -95,5 +104,12 @@ public class HomeScreen extends AppCompatActivity
                         .replace(R.id.fragmentContainer, new RequestFragment()).commit();
                 break;
         }
+    }
+
+    @Override
+    public void onCardClick()
+    {
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragmentContainer, new DoctorDetailsFragment()).commit();
     }
 }
