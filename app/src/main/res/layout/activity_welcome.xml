@@ -86,7 +86,7 @@
         android:layout_height="@dimen/activity_welcome_btn_login_height"
         android:layout_marginTop="@dimen/activity_welcome_btn_login_marginTop"
         android:background="@drawable/btn_rounded_green"
-        android:fontFamily="@font/proximanova_semibold"
+        android:fontFamily="@font/proximanova_regular"
         android:text="@string/login"
         android:textAllCaps="false"
         android:textColor="@color/colorAccent"

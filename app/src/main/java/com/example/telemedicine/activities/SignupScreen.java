@@ -27,7 +27,7 @@ public class SignupScreen extends AppCompatActivity
 
         next = findViewById(R.id.btn_next);
 
-        toolbar.setNavigationIcon(R.drawable.ic_arrow_back_white_18dp);
+        toolbar.setNavigationIcon(R.drawable.ic_arrow_back_white);
         toolbar.setNavigationOnClickListener(new View.OnClickListener()
         {
             @Override

@@ -56,7 +56,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="start|center_vertical"
                     android:contentDescription="@string/backbutton"
-                    android:src="@drawable/ic_arrow_back_white_18dp" />
+                    android:src="@drawable/ic_arrow_back_white" />
             </FrameLayout>
 
         </androidx.appcompat.widget.Toolbar>
