@@ -2,16 +2,11 @@ package com.example.telemedicine.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
 
-import com.example.telemedicine.Interfaces.CardOnClickListener;
 import com.example.telemedicine.Interfaces.IHomeFragment;
 import com.example.telemedicine.fragments_home_screen.DoctorDetailsFragment;
 import com.example.telemedicine.fragments_home_screen.HomeFragment;
@@ -26,11 +21,7 @@ public class HomeScreen extends AppCompatActivity
         implements BottomNavigationView.OnNavigationItemSelectedListener,
         FloatingActionButton.OnClickListener, IHomeFragment
 {
-    private Toolbar toolbar;
-    private TextView toolbarTitle;
-    private EditText nameInput, deseaseInput,
-            locationInput, descriptionInput;
-    private Button request;
+
     private BadgeDrawable badgeDrawable;
     private int menuItemId;
     private BottomNavigationView navigation;
@@ -40,24 +31,14 @@ public class HomeScreen extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home_screen);
+        setContentView(R.layout.activity_home);
 
         replaceToHomeFragment();
 
-        toolbar = findViewById(R.id.toolbar);
-        toolbarTitle = findViewById(R.id.toolbar_title);
-
-        nameInput = findViewById(R.id.nameOutput);
-        deseaseInput = findViewById(R.id.deseaseInput);
-        locationInput = findViewById(R.id.locationInput);
-        descriptionInput = findViewById(R.id.descriptionInput);
-
-        request = findViewById(R.id.request);
-
-        fab = findViewById(R.id.fab);
+        fab = findViewById(R.id.fab_request);
         fab.setOnClickListener(this);
 
-        navigation = findViewById(R.id.navigation);
+        navigation = findViewById(R.id.bnv_navigation);
         navigation.setOnNavigationItemSelectedListener(this);
 
         setBadge();
@@ -68,7 +49,7 @@ public class HomeScreen extends AppCompatActivity
         HomeFragment homeFragment = new HomeFragment();
         homeFragment.setiHomeFragment(this);
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.fragmentContainer, homeFragment).commit();
+                .replace(R.id.FL_fragment_container, homeFragment).commit();
     }
 
     public void setBadge()
@@ -85,7 +66,7 @@ public class HomeScreen extends AppCompatActivity
         {
             case R.id.notification:
                 getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.fragmentContainer, new NotificationFragment()).commit();
+                        .replace(R.id.FL_fragment_container, new NotificationFragment()).commit();
                 break;
             case R.id.home:
                 replaceToHomeFragment();
@@ -99,9 +80,9 @@ public class HomeScreen extends AppCompatActivity
     {
         switch (v.getId())
         {
-            case R.id.fab:
+            case R.id.fab_request:
                 getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.fragmentContainer, new RequestFragment()).commit();
+                        .replace(R.id.FL_fragment_container, new RequestFragment()).commit();
                 break;
         }
     }
@@ -110,6 +91,6 @@ public class HomeScreen extends AppCompatActivity
     public void onCardClick()
     {
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.fragmentContainer, new DoctorDetailsFragment()).commit();
+                .replace(R.id.FL_fragment_container, new DoctorDetailsFragment()).commit();
     }
 }

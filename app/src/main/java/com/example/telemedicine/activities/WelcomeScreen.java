@@ -16,10 +16,10 @@ public class WelcomeScreen extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_welcome_screen);
+        setContentView(R.layout.activity_welcome);
 
-        loginBtn = findViewById(R.id.loginBtn);
-        signUpBtn = findViewById(R.id.signUpBtn);
+        loginBtn = findViewById(R.id.btn_login);
+        signUpBtn = findViewById(R.id.btn_sign_up);
 
         loginBtn.setOnClickListener(new View.OnClickListener()
         {

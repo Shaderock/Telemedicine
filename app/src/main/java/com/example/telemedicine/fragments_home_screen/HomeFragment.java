@@ -6,14 +6,11 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RelativeLayout;
-import android.widget.Toolbar;
 
 import com.example.telemedicine.HomeRecyclerViewAdapter;
 import com.example.telemedicine.Interfaces.CardOnClickListener;
@@ -44,7 +41,7 @@ public class HomeFragment extends Fragment implements CardOnClickListener
     {
         Log.d("log", "HomeFragment: onCreateView");
         View view = inflater.inflate(R.layout.fragment_home, container, false);
-        recyclerView = view.findViewById(R.id.doctorList);
+        recyclerView = view.findViewById(R.id.rv_doctor_list);
 
         getDoctors();
         if (recyclerViewAdapter == null)

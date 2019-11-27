@@ -108,14 +108,14 @@ public class HomeRecyclerViewAdapter extends
         public ViewHolder(@NonNull View itemView)
         {
             super(itemView);
-            avatar = itemView.findViewById(R.id.avatar);
-            star = itemView.findViewById(R.id.star);
-            name = itemView.findViewById(R.id.name);
-            rating = itemView.findViewById(R.id.rating);
-            specialty = itemView.findViewById(R.id.specialty);
-            icon = itemView.findViewById(R.id.icon);
-            address = itemView.findViewById(R.id.address);
-            doctorCard = itemView.findViewById(R.id.doctorCard);
+            avatar = itemView.findViewById(R.id.civ_avatar);
+            star = itemView.findViewById(R.id.iv_star);
+            name = itemView.findViewById(R.id.tv_name);
+            rating = itemView.findViewById(R.id.tv_rating);
+            specialty = itemView.findViewById(R.id.tv_specialty);
+            icon = itemView.findViewById(R.id.iv_icon);
+            address = itemView.findViewById(R.id.tv_address);
+            doctorCard = itemView.findViewById(R.id.cv_doctor_card);
         }
     }
 }

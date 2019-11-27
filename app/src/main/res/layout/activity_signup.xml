@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ConstraintLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.SignupScreen">
@@ -9,7 +10,7 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="0dp"
-        android:layout_height="38dp"
+        android:layout_height="@dimen/activity_signup_toolbar_height"
         android:background="@color/colorPrimary"
         android:clipToPadding="true"
         android:focusable="true"
@@ -21,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/toolbar_title"
+            android:id="@+id/tv_toolbar_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -29,115 +30,112 @@
             android:letterSpacing="0.05"
             android:text="@string/register"
             android:textColor="@color/colorAccent"
-            android:textSize="16sp"
-            tools:layout_editor_absoluteX="179dp"
-            tools:layout_editor_absoluteY="9dp" />
+            android:textSize="@dimen/activity_signup_tv_toolbar_title_textSize" />
     </androidx.appcompat.widget.Toolbar>
 
     <ScrollView
+        android:id="@+id/sv_content"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout"
+            android:id="@+id/ConstraintLayout1_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <Button
-                android:id="@+id/addPhotosBtn"
-                android:layout_width="149dp"
-                android:layout_height="149dp"
-                android:layout_marginTop="62dp"
+                android:id="@+id/btn_add_photos"
+                android:layout_width="@dimen/activity_signup_btn_add_photos_width"
+                android:layout_height="@dimen/activity_signup_btn_add_photos_height"
+                android:layout_marginTop="@dimen/activity_signup_btn_add_photos_marginTop"
                 android:background="@drawable/btn_circle"
                 android:drawableTop="@drawable/ic_add_photos_icon"
-                android:drawablePadding="-22dp"
+                android:drawablePadding="@dimen/activity_signup_btn_add_photos_drawablePadding"
                 android:fontFamily="@font/proximanova_regular"
-                android:paddingTop="30dp"
+                android:paddingTop="@dimen/activity_signup_btn_add_photos_paddingTop"
                 android:text="@string/add_photos"
                 android:textColor="@color/colorInputFormName"
-                android:textSize="16sp"
+                android:textSize="@dimen/activity_signup_btn_add_photos_textSize"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/fullName"
+                android:id="@+id/tv_full_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="42dp"
+                android:layout_marginStart="@dimen/activity_signup_tv_full_name_marginStart"
+                android:layout_marginTop="@dimen/activity_signup_tv_full_name_marginTop"
                 android:fontFamily="@font/proximanova_semibold"
                 android:letterSpacing="0.05"
                 android:text="@string/full_name"
                 android:textColor="@color/colorInputFormName"
-                android:textSize="16sp"
+                android:textSize="@dimen/activity_signup_tv_full_name_textSize"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/addPhotosBtn" />
+                app:layout_constraintTop_toBottomOf="@+id/btn_add_photos" />
 
             <TextView
-                android:id="@+id/birthday"
+                android:id="@+id/tv_birthday"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="27dp"
+                android:layout_marginTop="@dimen/activity_signup_tv_birthday_marginTop"
                 android:fontFamily="@font/proximanova_semibold"
                 android:letterSpacing="0.05"
                 android:text="@string/birthday"
                 android:textColor="@color/colorInputFormName"
-                android:textSize="16sp"
-                app:layout_constraintStart_toStartOf="@+id/fullName"
-                app:layout_constraintTop_toBottomOf="@+id/fullNameInput" />
+                android:textSize="@dimen/activity_signup_tv_birthday_textSize"
+                app:layout_constraintStart_toStartOf="@+id/tv_full_name"
+                app:layout_constraintTop_toBottomOf="@+id/et_full_name" />
 
             <TextView
-                android:id="@+id/email"
+                android:id="@+id/tv_email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="27dp"
+                android:layout_marginTop="@dimen/activity_signup_tv_email_marginTop"
                 android:fontFamily="@font/proximanova_semibold"
                 android:letterSpacing="0.05"
                 android:text="@string/email"
                 android:textColor="@color/colorInputFormName"
-                android:textSize="16sp"
-                app:layout_constraintStart_toStartOf="@+id/fullName"
-                app:layout_constraintTop_toBottomOf="@+id/birthdayInput" />
+                android:textSize="@dimen/activity_signup_tv_email_textSize"
+                app:layout_constraintStart_toStartOf="@+id/tv_full_name"
+                app:layout_constraintTop_toBottomOf="@+id/et_birthday" />
 
             <TextView
-                android:id="@+id/phoneNumber"
+                android:id="@+id/tv_phone_number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="@dimen/activity_signup_tv_phone_number_marginTop"
                 android:fontFamily="@font/proximanova_semibold"
                 android:letterSpacing="0.05"
                 android:text="@string/phone_number"
                 android:textColor="@color/colorInputFormName"
-                android:textSize="16sp"
-                app:layout_constraintStart_toStartOf="@+id/fullName"
-                app:layout_constraintTop_toBottomOf="@+id/emailInput" />
+                android:textSize="@dimen/activity_signup_tv_phone_number_textSize"
+                app:layout_constraintStart_toStartOf="@+id/tv_full_name"
+                app:layout_constraintTop_toBottomOf="@+id/et_email" />
 
             <TextView
-                android:id="@+id/location"
+                android:id="@+id/tv_location"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="27dp"
+                android:layout_marginTop="@dimen/activity_signup_tv_location_marginTop"
                 android:fontFamily="@font/proximanova_semibold"
                 android:letterSpacing="0.05"
                 android:text="@string/location_address"
                 android:textColor="@color/colorInputFormName"
-                android:textSize="16sp"
-                app:layout_constraintStart_toStartOf="@+id/fullName"
-                app:layout_constraintTop_toBottomOf="@+id/phoneNumberInput" />
+                android:textSize="@dimen/activity_signup_tv_location_textSize"
+                app:layout_constraintStart_toStartOf="@+id/tv_full_name"
+                app:layout_constraintTop_toBottomOf="@+id/et_phone_number" />
 
             <EditText
-                android:id="@+id/fullNameInput"
+                android:id="@+id/et_full_name"
                 android:layout_width="0dp"
-                android:layout_height="53.5dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginEnd="20dp"
+                android:layout_height="@dimen/activity_signup_et_full_name_height"
+                android:layout_marginTop="@dimen/activity_signup_et_full_name_marginTop"
+                android:layout_marginEnd="@dimen/activity_signup_et_full_name_marginEnd"
                 android:background="@drawable/form_input"
                 android:ems="10"
                 android:fontFamily="@font/proximanova_regular"
@@ -145,20 +143,20 @@
                 android:importantForAutofill="no"
                 android:inputType="textPersonName"
                 android:letterSpacing="0.025"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
+                android:paddingStart="@dimen/activity_signup_et_full_name_paddingStart"
+                android:paddingEnd="@dimen/activity_signup_et_full_name_paddingEnd"
                 android:textColor="@color/colorInputFormHint"
                 android:textColorHint="@color/colorInputFormHint"
-                android:textSize="15sp"
+                android:textSize="@dimen/activity_signup_et_full_name_textSize"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/fullName"
-                app:layout_constraintTop_toBottomOf="@+id/fullName" />
+                app:layout_constraintStart_toStartOf="@+id/tv_full_name"
+                app:layout_constraintTop_toBottomOf="@+id/tv_full_name" />
 
             <EditText
-                android:id="@+id/birthdayInput"
+                android:id="@+id/et_birthday"
                 android:layout_width="0dp"
-                android:layout_height="53.5dp"
-                android:layout_marginTop="15dp"
+                android:layout_height="@dimen/activity_signup_et_birthday__height"
+                android:layout_marginTop="@dimen/activity_signup_et_birthday_marginTop"
                 android:background="@drawable/form_input"
                 android:ems="10"
                 android:fontFamily="@font/proximanova_regular"
@@ -166,20 +164,20 @@
                 android:importantForAutofill="no"
                 android:inputType="datetime"
                 android:letterSpacing="0.025"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
+                android:paddingStart="@dimen/activity_signup_et_birthday_paddingStart"
+                android:paddingEnd="@dimen/activity_signup_et_birthday_paddingEnd"
                 android:textColor="@color/colorInputFormHint"
                 android:textColorHint="@color/colorInputFormHint"
-                android:textSize="15sp"
-                app:layout_constraintEnd_toEndOf="@+id/fullNameInput"
-                app:layout_constraintStart_toStartOf="@+id/fullNameInput"
-                app:layout_constraintTop_toBottomOf="@+id/birthday" />
+                android:textSize="@dimen/activity_signup_et_birthday_textSize"
+                app:layout_constraintEnd_toEndOf="@+id/et_full_name"
+                app:layout_constraintStart_toStartOf="@+id/et_full_name"
+                app:layout_constraintTop_toBottomOf="@+id/tv_birthday" />
 
             <EditText
-                android:id="@+id/emailInput"
+                android:id="@+id/et_email"
                 android:layout_width="0dp"
-                android:layout_height="53.5dp"
-                android:layout_marginTop="15dp"
+                android:layout_height="@dimen/activity_signup_et_email_height"
+                android:layout_marginTop="@dimen/activity_signup_et_email_marginTop"
                 android:background="@drawable/form_input"
                 android:ems="10"
                 android:fontFamily="@font/proximanova_regular"
@@ -187,20 +185,20 @@
                 android:importantForAutofill="no"
                 android:inputType="textWebEmailAddress"
                 android:letterSpacing="0.025"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
+                android:paddingStart="@dimen/activity_signup_et_email_paddingStart"
+                android:paddingEnd="@dimen/activity_signup_et_email_paddingEnd"
                 android:textColor="@color/colorInputFormHint"
                 android:textColorHint="@color/colorInputFormHint"
-                android:textSize="15sp"
-                app:layout_constraintEnd_toEndOf="@+id/birthdayInput"
-                app:layout_constraintStart_toStartOf="@+id/fullNameInput"
-                app:layout_constraintTop_toBottomOf="@+id/email" />
+                android:textSize="@dimen/activity_signup_et_email_textSize"
+                app:layout_constraintEnd_toEndOf="@+id/et_birthday"
+                app:layout_constraintStart_toStartOf="@+id/et_full_name"
+                app:layout_constraintTop_toBottomOf="@+id/tv_email" />
 
             <EditText
-                android:id="@+id/phoneNumberInput"
+                android:id="@+id/et_phone_number"
                 android:layout_width="0dp"
-                android:layout_height="53.5dp"
-                android:layout_marginTop="17dp"
+                android:layout_height="@dimen/activity_signup_et_phone_number_height"
+                android:layout_marginTop="@dimen/activity_signup_et_phone_number_marginTop"
                 android:background="@drawable/form_input"
                 android:ems="10"
                 android:fontFamily="@font/proximanova_regular"
@@ -208,20 +206,20 @@
                 android:importantForAutofill="no"
                 android:inputType="phone"
                 android:letterSpacing="0.025"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
+                android:paddingStart="@dimen/activity_signup_et_phone_number_paddingStart"
+                android:paddingEnd="@dimen/activity_signup_et_phone_number_paddingEnd"
                 android:textColor="@color/colorInputFormHint"
                 android:textColorHint="@color/colorInputFormHint"
-                android:textSize="15sp"
-                app:layout_constraintEnd_toEndOf="@+id/emailInput"
-                app:layout_constraintStart_toStartOf="@+id/fullNameInput"
-                app:layout_constraintTop_toBottomOf="@+id/phoneNumber" />
+                android:textSize="@dimen/activity_signup_et_phone_number_textSize"
+                app:layout_constraintEnd_toEndOf="@+id/et_email"
+                app:layout_constraintStart_toStartOf="@+id/et_full_name"
+                app:layout_constraintTop_toBottomOf="@+id/tv_phone_number" />
 
             <EditText
-                android:id="@+id/locationInput"
+                android:id="@+id/et_location"
                 android:layout_width="0dp"
-                android:layout_height="53.5dp"
-                android:layout_marginTop="15dp"
+                android:layout_height="@dimen/activity_signup_et_location_height"
+                android:layout_marginTop="@dimen/activity_signup_et_location_marginTop"
                 android:background="@drawable/form_input"
                 android:ems="10"
                 android:fontFamily="@font/proximanova_regular"
@@ -229,34 +227,34 @@
                 android:importantForAutofill="no"
                 android:inputType="textPostalAddress"
                 android:letterSpacing="0.025"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
+                android:paddingStart="@dimen/activity_signup_et_location_paddingStart"
+                android:paddingEnd="@dimen/activity_signup_et_location_paddingEnd"
                 android:textColor="@color/colorInputFormHint"
                 android:textColorHint="@color/colorInputFormHint"
-                android:textSize="15sp"
-                app:layout_constraintEnd_toEndOf="@+id/emailInput"
-                app:layout_constraintStart_toStartOf="@+id/fullNameInput"
-                app:layout_constraintTop_toBottomOf="@+id/location" />
+                android:textSize="@dimen/activity_signup_et_location_textSize"
+                app:layout_constraintEnd_toEndOf="@+id/et_email"
+                app:layout_constraintStart_toStartOf="@+id/et_full_name"
+                app:layout_constraintTop_toBottomOf="@+id/tv_location" />
 
             <Button
-                android:id="@+id/nextBtn"
+                android:id="@+id/btn_next"
                 android:layout_width="0dp"
-                android:layout_height="55dp"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginBottom="30dp"
+                android:layout_height="@dimen/activity_signup_btn_next_height"
+                android:layout_marginStart="@dimen/activity_signup_btn_next_marginStart"
+                android:layout_marginTop="@dimen/activity_signup_btn_next_marginTop"
+                android:layout_marginEnd="@dimen/activity_signup_btn_next_marginEnd"
+                android:layout_marginBottom="@dimen/activity_signup_btn_next_marginBottom"
                 android:background="@drawable/btn_rounded_green_borderless"
                 android:fontFamily="@font/proximanova_semibold"
                 android:letterSpacing="0.05"
                 android:text="@string/next"
                 android:textAllCaps="false"
                 android:textColor="@color/colorAccent"
-                android:textSize="16sp"
+                android:textSize="@dimen/activity_signup_btn_next_textSize"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/locationInput"
-                app:layout_constraintStart_toStartOf="@+id/locationInput"
-                app:layout_constraintTop_toBottomOf="@+id/locationInput" />
+                app:layout_constraintEnd_toEndOf="@id/et_location"
+                app:layout_constraintStart_toStartOf="@id/et_location"
+                app:layout_constraintTop_toBottomOf="@id/et_location" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 

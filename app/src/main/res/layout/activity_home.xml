@@ -2,51 +2,51 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ConstraintLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:clipToPadding="false"
-    android:theme="@style/WhiteMaterial"
     android:focusable="true"
     android:focusableInTouchMode="true"
+    android:theme="@style/WhiteMaterial"
     tools:context=".activities.HomeScreen">
 
     <FrameLayout
-        android:id="@+id/fragmentContainer"
+        android:id="@+id/FL_fragment_container"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@id/CoordinatorLayout"
+        app:layout_constraintBottom_toTopOf="@id/CoordinatorLayout1"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-    </FrameLayout>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:id="@+id/CoordinatorLayout"
+        android:id="@+id/CoordinatorLayout1"
         android:layout_width="match_parent"
-        android:layout_height="56.5dp"
+        android:layout_height="@dimen/activity_home_screen_coordinator_layout_height"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent">
 
         <View
-            android:id="@+id/shadow"
+            android:id="@+id/v_shadow"
             android:layout_width="match_parent"
-            android:layout_height="7.5dp"
+            android:layout_height="@dimen/activity_home_screen_v_shadow_height"
             android:background="@drawable/shadow" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/navigation"
+            android:id="@+id/bnv_navigation"
             android:layout_width="match_parent"
-            android:layout_height="49dp"
-            android:layout_marginTop="7.5dp"
+            android:layout_height="@dimen/activity_home_screen_bnv_navigation_height"
+            android:layout_marginTop="@dimen/activity_home_screen_bnv_navigation_marginTop"
             android:clipChildren="false"
             android:clipToPadding="false"
-            android:paddingTop="12dp"
-            android:paddingBottom="10dp"
+            android:paddingTop="@dimen/activity_home_screen_bnv_navigation_paddingTop"
+            android:paddingBottom="@dimen/activity_home_screen_bnv_navigation_paddingBottom"
             android:textAlignment="gravity"
             android:theme="@style/Navigation"
             app:itemBackground="@color/colorAccent"
-            app:itemIconSize="26dp"
+            app:itemIconSize="@dimen/activity_home_screen_bnv_navigation_itemIconSize"
             app:itemIconTint="@drawable/nav_item_state_selector"
             app:itemTextColor="@drawable/nav_item_state_selector"
             app:labelVisibilityMode="labeled"
@@ -55,19 +55,19 @@
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
+        android:id="@+id/fab_request"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="3dp"
-        android:layout_marginBottom="7dp"
+        android:layout_marginTop="@dimen/activity_home_screen_fab_request_marginTop"
+        android:layout_marginBottom="@dimen/activity_home_screen_fab_request_marginBottom"
         android:clickable="true"
         android:focusable="true"
         app:backgroundTint="@color/colorPrimary"
-        app:fabCustomSize="50dp"
+        app:fabCustomSize="@dimen/activity_home_screen_fab_request_fabCustomSize"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@id/CoordinatorLayout"
+        app:layout_constraintTop_toTopOf="@id/CoordinatorLayout1"
         app:srcCompat="@drawable/ic_add_white_18dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
