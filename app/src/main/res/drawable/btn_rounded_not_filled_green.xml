@@ -2,7 +2,7 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
     <corners
-        android:bottomLeftRadius="@dimen/drawable_btn_rounded_not_filled_green_bottomeLeftRadius"
+        android:bottomLeftRadius="@dimen/drawable_btn_rounded_not_filled_green_bottomLeftRadius"
         android:bottomRightRadius="@dimen/drawable_btn_rounded_not_filled_green_bottomRightRadius"
         android:topLeftRadius="@dimen/drawable_btn_rounded_not_filled_green_topLeftRadius"
         android:topRightRadius="@dimen/drawable_btn_rounded_not_filled_green_topRightRadius" />

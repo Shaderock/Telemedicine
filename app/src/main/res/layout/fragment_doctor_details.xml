@@ -119,7 +119,7 @@
 
                         <TextView
                             android:id="@+id/tv_name"
-                            android:layout_width="@dimen/fragment_doctor_details_tv_name_width"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="@dimen/fragment_doctor_details_tv_name_marginStart"
                             android:layout_marginTop="@dimen/fragment_doctor_details_tv_name_marginTop"
@@ -133,8 +133,8 @@
 
                         <TextView
                             android:id="@+id/tv_specialty"
-                            android:layout_width="@dimen/fragment_doctor_details_tv_specialty_width"
-                            android:layout_height="@dimen/fragment_doctor_details_tv_specialty_height"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/fragment_doctor_details_tv_specialty_marginTop"
                             android:fontFamily="@font/proximanova_regular_italic"
                             android:letterSpacing="0.05"
@@ -197,7 +197,7 @@
                         <TextView
                             android:id="@+id/tv_rating"
                             android:layout_width="wrap_content"
-                            android:layout_height="@dimen/fragment_doctor_details_tv_rating_height"
+                            android:layout_height="wrap_content"
                             android:layout_marginStart="@dimen/fragment_doctor_details_tv_rating_marginStart"
                             android:fontFamily="@font/proximanova_regular"
                             android:letterSpacing="0.05"

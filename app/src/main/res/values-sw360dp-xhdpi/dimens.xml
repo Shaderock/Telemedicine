@@ -499,7 +499,7 @@
 
     // drawable_btn_rounded_not_filled_green
 
-    <dimen name="drawable_btn_rounded_not_filled_green_bottomeLeftRadius">26dp</dimen>
+    <dimen name="drawable_btn_rounded_not_filled_green_bottomLeftRadius">26dp</dimen>
     <dimen name="drawable_btn_rounded_not_filled_green_bottomRightRadius">26dp</dimen>
     <dimen name="drawable_btn_rounded_not_filled_green_topLeftRadius">26dp</dimen>
     <dimen name="drawable_btn_rounded_not_filled_green_topRightRadius">26dp</dimen>
