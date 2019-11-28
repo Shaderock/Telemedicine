@@ -446,12 +446,12 @@
     <dimen name="fragment_request_et_description_textSize" format="float" type="dimen">14.5sp
     </dimen>
 
-    <dimen name="fragment_request_et_btn_request_height">53dp</dimen>
-    <dimen name="fragment_request_et_btn_request_marginStart">29dp</dimen>
-    <dimen name="fragment_request_et_btn_request_marginTop">638dp</dimen>
-    <dimen name="fragment_request_et_btn_request_marginBottom">32dp</dimen>
+    <dimen name="fragment_request_btn_request_height">53dp</dimen>
+    <dimen name="fragment_request_btn_request_marginStart">29dp</dimen>
+    <dimen name="fragment_request_btn_request_marginTop">638dp</dimen>
+    <dimen name="fragment_request_btn_request_marginBottom">32dp</dimen>
     <dimen name="fragment_request_btn_request_marginEnd">26dp</dimen>
-    <dimen name="fragment_request_et_btn_request_textSize" format="float" type="dimen">16.5sp
+    <dimen name="fragment_request_btn_request_textSize" format="float" type="dimen">16.5sp
     </dimen>
 
     // layout_doctor_card
@@ -497,5 +497,11 @@
     <dimen name="drawable_btn_circle_dashWidth">4dp</dimen>
     <dimen name="drawable_btn_circle_dashGap">6dp</dimen>
 
+    // drawable_btn_rounded_not_filled_green
+
+    <dimen name="drawable_btn_rounded_not_filled_green_bottomeLeftRadius">26dp</dimen>
+    <dimen name="drawable_btn_rounded_not_filled_green_bottomRightRadius">26dp</dimen>
+    <dimen name="drawable_btn_rounded_not_filled_green_topLeftRadius">26dp</dimen>
+    <dimen name="drawable_btn_rounded_not_filled_green_topRightRadius">26dp</dimen>
 
 </resources>

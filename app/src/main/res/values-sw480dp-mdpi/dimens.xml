@@ -387,70 +387,70 @@
 
     // fragment_request
 
-    <dimen name="fragment_request_toolbar_height">40dp</dimen>
+    <dimen name="fragment_request_toolbar_height">60dp</dimen>
 
     <dimen name="fragment_request_FrameLayout1_1_paddingStart">10dp</dimen>
     <dimen name="fragment_request_FrameLayout1_1_paddingEnd">20dp</dimen>
 
-    <dimen name="fragment_request_tv_toolbar_title_textSize">16sp</dimen>
+    <dimen name="fragment_request_tv_toolbar_title_textSize">20sp</dimen>
 
-    <dimen name="fragment_request_iv_more_width">40dp</dimen>
+    <dimen name="fragment_request_iv_more_width">60dp</dimen>
 
-    <dimen name="fragment_request_tv_very_urgent_height">53dp</dimen>
-    <dimen name="fragment_request_tv_very_urgent_marginStart">83dp</dimen>
-    <dimen name="fragment_request_tv_very_urgent_marginTop">42dp</dimen>
-    <dimen name="fragment_request_tv_very_urgent_marginEnd">83dp</dimen>
-    <dimen name="fragment_request_tv_very_urgent_textSize">15sp</dimen>
+    <dimen name="fragment_request_tv_very_urgent_height">70dp</dimen>
+    <dimen name="fragment_request_tv_very_urgent_marginStart">108dp</dimen>
+    <dimen name="fragment_request_tv_very_urgent_marginTop">55dp</dimen>
+    <dimen name="fragment_request_tv_very_urgent_marginEnd">108dp</dimen>
+    <dimen name="fragment_request_tv_very_urgent_textSize">19sp</dimen>
 
-    <dimen name="fragment_request_tv_name_marginStart">22dp</dimen>
-    <dimen name="fragment_request_tv_name_marginTop">139dp</dimen>
-    <dimen name="fragment_request_tv_name_textSize" format="float" type="dimen">16.5sp</dimen>
+    <dimen name="fragment_request_tv_name_marginStart">28dp</dimen>
+    <dimen name="fragment_request_tv_name_marginTop">188dp</dimen>
+    <dimen name="fragment_request_tv_name_textSize" format="float" type="dimen">22sp</dimen>
 
-    <dimen name="fragment_request_tv_desease_marginTop">253dp</dimen>
-    <dimen name="fragment_request_tv_desease_textSize" format="float" type="dimen">16.5sp</dimen>
+    <dimen name="fragment_request_tv_desease_marginTop">340dp</dimen>
+    <dimen name="fragment_request_tv_desease_textSize" format="float" type="dimen">22sp</dimen>
 
-    <dimen name="fragment_request_tv_location_marginTop">368dp</dimen>
+    <dimen name="fragment_request_tv_location_marginTop">493dp</dimen>
     <dimen name="fragment_request_tv_location_lineSpacingExtra">0dp</dimen>
-    <dimen name="fragment_request_tv_location_textSize" format="float" type="dimen">16.5sp</dimen>
+    <dimen name="fragment_request_tv_location_textSize" format="float" type="dimen">22sp</dimen>
 
-    <dimen name="fragment_request_tv_description_marginTop">479dp</dimen>
-    <dimen name="fragment_request_tv_description_textSize" format="float" type="dimen">16.5sp
+    <dimen name="fragment_request_tv_description_marginTop">646dp</dimen>
+    <dimen name="fragment_request_tv_description_textSize" format="float" type="dimen">22sp
     </dimen>
 
-    <dimen name="fragment_request_et_name_height" format="float" type="dimen">48.5dp</dimen>
-    <dimen name="fragment_request_et_name_marginTop">172dp</dimen>
-    <dimen name="fragment_request_et_name_marginEnd">20dp</dimen>
-    <dimen name="fragment_request_et_name_paddingStart">22dp</dimen>
-    <dimen name="fragment_request_et_name_paddingEnd">22dp</dimen>
-    <dimen name="fragment_request_et_name_textSize" format="float" type="dimen">14.5sp</dimen>
+    <dimen name="fragment_request_et_name_height" format="float" type="dimen">64dp</dimen>
+    <dimen name="fragment_request_et_name_marginTop">230dp</dimen>
+    <dimen name="fragment_request_et_name_marginEnd">25dp</dimen>
+    <dimen name="fragment_request_et_name_paddingStart">28dp</dimen>
+    <dimen name="fragment_request_et_name_paddingEnd">28dp</dimen>
+    <dimen name="fragment_request_et_name_textSize" format="float" type="dimen">19sp</dimen>
 
-    <dimen name="fragment_request_et_desease_height" format="float" type="dimen">48.5dp</dimen>
-    <dimen name="fragment_request_et_desease_marginTop">288dp</dimen>
-    <dimen name="fragment_request_et_desease_paddingStart">22dp</dimen>
-    <dimen name="fragment_request_et_desease_paddingEnd">22dp</dimen>
-    <dimen name="fragment_request_et_desease_textSize" format="float" type="dimen">14.5sp</dimen>
+    <dimen name="fragment_request_et_desease_height" format="float" type="dimen">64dp</dimen>
+    <dimen name="fragment_request_et_desease_marginTop">384dp</dimen>
+    <dimen name="fragment_request_et_desease_paddingStart">28dp</dimen>
+    <dimen name="fragment_request_et_desease_paddingEnd">28dp</dimen>
+    <dimen name="fragment_request_et_desease_textSize" format="float" type="dimen">19sp</dimen>
 
-    <dimen name="fragment_request_et_location_height" format="float" type="dimen">48.5dp</dimen>
-    <dimen name="fragment_request_et_location_marginTop">401dp</dimen>
-    <dimen name="fragment_request_et_location_paddingStart">22dp</dimen>
-    <dimen name="fragment_request_et_location_paddingEnd">22dp</dimen>
-    <dimen name="fragment_request_et_location_textSize" format="float" type="dimen">14.5sp</dimen>
+    <dimen name="fragment_request_et_location_height" format="float" type="dimen">64dp</dimen>
+    <dimen name="fragment_request_et_location_marginTop">537dp</dimen>
+    <dimen name="fragment_request_et_location_paddingStart">28dp</dimen>
+    <dimen name="fragment_request_et_location_paddingEnd">28dp</dimen>
+    <dimen name="fragment_request_et_location_textSize" format="float" type="dimen">19sp</dimen>
 
-    <dimen name="fragment_request_et_description_height" format="float" type="dimen">87.3dp</dimen>
-    <dimen name="fragment_request_et_description_marginTop">514dp</dimen>
-    <dimen name="fragment_request_et_description_paddingStart">22dp</dimen>
+    <dimen name="fragment_request_et_description_height" format="float" type="dimen">115dp</dimen>
+    <dimen name="fragment_request_et_description_marginTop">690dp</dimen>
+    <dimen name="fragment_request_et_description_paddingStart">28dp</dimen>
     <dimen name="fragment_request_et_description_paddingTop">19dp</dimen>
-    <dimen name="fragment_request_et_description_paddingEnd">22dp</dimen>
-    <dimen name="fragment_request_et_description_paddingBottom">19dp</dimen>
-    <dimen name="fragment_request_et_description_textSize" format="float" type="dimen">14.5sp
+    <dimen name="fragment_request_et_description_paddingEnd">28dp</dimen>
+    <dimen name="fragment_request_et_description_paddingBottom">25dp</dimen>
+    <dimen name="fragment_request_et_description_textSize" format="float" type="dimen">19sp
     </dimen>
 
-    <dimen name="fragment_request_et_btn_request_height">53dp</dimen>
-    <dimen name="fragment_request_et_btn_request_marginStart">29dp</dimen>
-    <dimen name="fragment_request_et_btn_request_marginTop">638dp</dimen>
-    <dimen name="fragment_request_et_btn_request_marginBottom">32dp</dimen>
-    <dimen name="fragment_request_btn_request_marginEnd">26dp</dimen>
-    <dimen name="fragment_request_et_btn_request_textSize" format="float" type="dimen">16.5sp
+    <dimen name="fragment_request_btn_request_height">70dp</dimen>
+    <dimen name="fragment_request_btn_request_marginStart">37dp</dimen>
+    <dimen name="fragment_request_btn_request_marginTop">852dp</dimen>
+    <dimen name="fragment_request_btn_request_marginBottom">40dp</dimen>
+    <dimen name="fragment_request_btn_request_marginEnd">37dp</dimen>
+    <dimen name="fragment_request_btn_request_textSize" format="float" type="dimen">22sp
     </dimen>
 
     // layout_doctor_card
@@ -496,5 +496,11 @@
     <dimen name="drawable_btn_circle_dashWidth">4dp</dimen>
     <dimen name="drawable_btn_circle_dashGap">5dp</dimen>
 
+    // drawable_btn_rounded_not_filled_green
+
+    <dimen name="drawable_btn_rounded_not_filled_green_bottomeLeftRadius">35dp</dimen>
+    <dimen name="drawable_btn_rounded_not_filled_green_bottomRightRadius">35dp</dimen>
+    <dimen name="drawable_btn_rounded_not_filled_green_topLeftRadius">35dp</dimen>
+    <dimen name="drawable_btn_rounded_not_filled_green_topRightRadius">35dp</dimen>
 
 </resources>
