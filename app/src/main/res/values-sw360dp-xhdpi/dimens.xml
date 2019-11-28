@@ -284,7 +284,7 @@
     <dimen name="fragment_notification_iv_approve_width">141dp</dimen>
     <dimen name="fragment_notification_iv_approve_height">141dp</dimen>
     <dimen name="fragment_notification_iv_approve_marginTop">43dp</dimen>
-    <dimen name="fragment_notification_iv_approve_textSize" format="float" type="dimen">18.45sp
+    <dimen name="fragment_notification_tv_approvement_textSize" format="float" type="dimen">18.45sp
     </dimen>
 
     <dimen name="fragment_notification_tv_quote_marginTop">32dp</dimen>
