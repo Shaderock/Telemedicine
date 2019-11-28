@@ -48,7 +48,7 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="end"
                     android:contentDescription="@string/morebutton"
-                    android:src="@drawable/ic_more_horiz_white_24dp" />
+                    android:src="@drawable/ic_more_horiz_white" />
 
                 <ImageView
                     android:id="@+id/iv_back_arrow"

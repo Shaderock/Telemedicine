@@ -39,6 +39,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/activity_home_screen_bnv_navigation_height"
             android:layout_marginTop="@dimen/activity_home_screen_bnv_navigation_marginTop"
+            android:background="@color/colorAccent"
             android:clipChildren="false"
             android:clipToPadding="false"
             android:paddingTop="@dimen/activity_home_screen_bnv_navigation_paddingTop"
@@ -64,10 +65,12 @@
         android:focusable="true"
         app:backgroundTint="@color/colorPrimary"
         app:fabCustomSize="@dimen/activity_home_screen_fab_request_fabCustomSize"
+        app:fabSize="auto"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@id/CoordinatorLayout1"
-        app:srcCompat="@drawable/ic_add_white_18dp" />
+        app:maxImageSize="@dimen/activity_home_fab_request_maxImageSize"
+        app:srcCompat="@drawable/ic_add_white" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

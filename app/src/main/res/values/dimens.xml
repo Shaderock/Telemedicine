@@ -13,6 +13,7 @@
     <dimen name="activity_home_screen_fab_request_marginTop">3dp</dimen>
     <dimen name="activity_home_screen_fab_request_marginBottom">7dp</dimen>
     <dimen name="activity_home_screen_fab_request_fabCustomSize">50dp</dimen>
+    <dimen name="activity_home_fab_request_maxImageSize">24dp</dimen>
 
     <dimen name="activity_home_screen_v_shadow_height" format="float" type="dimen">7.5dp</dimen>
 

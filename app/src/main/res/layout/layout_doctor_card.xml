@@ -37,7 +37,7 @@
         <TextView
             android:id="@+id/tv_address"
             android:layout_width="wrap_content"
-            android:layout_height="@dimen/layout_doctor_card_tv_address_height"
+            android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/layout_doctor_card_tv_address_marginStart"
             android:layout_marginTop="@dimen/layout_doctor_card_tv_address_marginTop"
             android:fontFamily="@font/proximanova_regular"
@@ -62,7 +62,7 @@
         <TextView
             android:id="@+id/tv_rating"
             android:layout_width="wrap_content"
-            android:layout_height="@dimen/layout_doctor_card_tv_rating_height"
+            android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/layout_doctor_card_tv_rating_marginStart"
             android:fontFamily="@font/proximanova_regular"
             android:letterSpacing="0.05"
@@ -81,7 +81,7 @@
             app:layout_constraintStart_toEndOf="@id/tv_name"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_star" />
-
+<!--размеры звездочки-->
         <ImageView
             android:id="@+id/iv_icon"
             android:layout_width="wrap_content"
