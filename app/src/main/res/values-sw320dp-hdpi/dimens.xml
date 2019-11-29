@@ -258,7 +258,7 @@
 
     <dimen name="fragment_home_toolbar_height">31dp</dimen>
 
-    <dimen name="fragment_home_FrameLayout1_1_paddingEnd">20dp</dimen>
+    <dimen name="fragment_home_FrameLayout1_1_paddingEnd">17dp</dimen>
 
     <dimen name="fragment_home_tv_toolbar_title_textSize">13sp</dimen>
 
@@ -270,91 +270,91 @@
 
     // fragment_notification
 
-    <dimen name="fragment_notification_toolbar_height">40dp</dimen>
+    <dimen name="fragment_notification_toolbar_height">31dp</dimen>
 
-    <dimen name="fragment_notification_FrameLayout1_1_paddingEnd">20dp</dimen>
+    <dimen name="fragment_notification_FrameLayout1_1_paddingEnd">17dp</dimen>
 
-    <dimen name="fragment_notification_toolbar_title_textSize">16sp</dimen>
+    <dimen name="fragment_notification_toolbar_title_textSize">13sp</dimen>
 
-    <dimen name="fragment_notification_iv_more_width">40dp</dimen>
+    <dimen name="fragment_notification_iv_more_width">31dp</dimen>
 
-    <dimen name="fragment_notification_btn_confirm_marginTop">53dp</dimen>
+    <dimen name="fragment_notification_btn_confirm_marginTop">45dp</dimen>
 
-    <dimen name="fragment_notification_iv_approve_width">141dp</dimen>
-    <dimen name="fragment_notification_iv_approve_height">141dp</dimen>
-    <dimen name="fragment_notification_iv_approve_marginTop">43dp</dimen>
-    <dimen name="fragment_notification_tv_approvement_textSize" format="float" type="dimen">18.45sp
+    <dimen name="fragment_notification_iv_approve_width">120dp</dimen>
+    <dimen name="fragment_notification_iv_approve_height">120dp</dimen>
+    <dimen name="fragment_notification_iv_approve_marginTop">37dp</dimen>
+    <dimen name="fragment_notification_tv_approvement_textSize" format="float" type="dimen">16.6sp
     </dimen>
 
-    <dimen name="fragment_notification_tv_quote_marginTop">32dp</dimen>
-    <dimen name="fragment_notification_tv_quote_lineSpacingExtra">10sp</dimen>
-    <dimen name="fragment_notification_tv_quote_textSize" format="float" type="dimen">14.5sp</dimen>
+    <dimen name="fragment_notification_tv_quote_marginTop">29dp</dimen>
+    <dimen name="fragment_notification_tv_quote_lineSpacingExtra">9sp</dimen>
+    <dimen name="fragment_notification_tv_quote_textSize" format="float" type="dimen">13sp</dimen>
 
-    <dimen name="fragment_notification_tv_request_details_marginStart">26dp</dimen>
-    <dimen name="fragment_notification_tv_request_details_marginTop">60dp</dimen>
+    <dimen name="fragment_notification_tv_request_details_marginStart">23dp</dimen>
+    <dimen name="fragment_notification_tv_request_details_marginTop">54dp</dimen>
     <dimen name="fragment_notification_tv_request_details_textSize" format="float" type="dimen">
-        18.45sp
+        16.6sp
     </dimen>
 
-    <dimen name="fragment_notification_tv_user_name_marginTop">26dp</dimen>
-    <dimen name="fragment_notification_tv_user_name_textSize" format="float" type="dimen">17.45sp
+    <dimen name="fragment_notification_tv_user_name_marginTop">23dp</dimen>
+    <dimen name="fragment_notification_tv_user_name_textSize" format="float" type="dimen">15.7sp
     </dimen>
 
     <dimen name="fragment_notification_tv_name_output_marginTop">5dp</dimen>
-    <dimen name="fragment_notification_tv_name_output_textSize" format="float" type="dimen">18.45sp
+    <dimen name="fragment_notification_tv_name_output_textSize" format="float" type="dimen">16.6sp
     </dimen>
 
-    <dimen name="fragment_notification_tv_desease_marginTop">27dp</dimen>
-    <dimen name="fragment_notification_tv_desease_textSize" format="float" type="dimen">17.45sp
+    <dimen name="fragment_notification_tv_desease_marginTop">21dp</dimen>
+    <dimen name="fragment_notification_tv_desease_textSize" format="float" type="dimen">15.7sp
     </dimen>
 
     <dimen name="fragment_notification_tv_desease_output_marginTop">5dp</dimen>
     <dimen name="fragment_notification_tv_desease_output_textSize" format="float" type="dimen">
-        18.45sp
+        16.6sp
     </dimen>
 
-    <dimen name="fragment_notification_tv_location_marginTop">27dp</dimen>
-    <dimen name="fragment_notification_tv_location_textSize" format="float" type="dimen">17.45sp
+    <dimen name="fragment_notification_tv_location_marginTop">21dp</dimen>
+    <dimen name="fragment_notification_tv_location_textSize" format="float" type="dimen">15.7sp
     </dimen>
 
     <dimen name="fragment_notification_tv_location_output_marginTop">5dp</dimen>
     <dimen name="fragment_notification_tv_location_output_textSize" format="float" type="dimen">
-        18.45sp
+        16.6sp
     </dimen>
 
-    <dimen name="fragment_notification_tv_description_marginTop">27dp</dimen>
-    <dimen name="fragment_notification_tv_description_textSize" format="float" type="dimen">17.45sp
+    <dimen name="fragment_notification_tv_description_marginTop">21dp</dimen>
+    <dimen name="fragment_notification_tv_description_textSize" format="float" type="dimen">15.7sp
     </dimen>
 
     <dimen name="fragment_notification_tv_description_output_marginTop">5dp</dimen>
-    <dimen name="fragment_notification_tv_description_output_marginEnd">29dp</dimen>
+    <dimen name="fragment_notification_tv_description_output_marginEnd">26dp</dimen>
     <dimen name="fragment_notification_tv_description_output_lineSpacingExtra">5sp</dimen>
     <dimen name="fragment_notification_tv_description_output_textSize" format="float" type="dimen">
-        18.45sp
+        16.6sp
     </dimen>
 
-    <dimen name="fragment_notification_tv_doctor_marginTop">42dp</dimen>
-    <dimen name="fragment_notification_tv_doctor_textSize" format="float" type="dimen">18.45sp
+    <dimen name="fragment_notification_tv_doctor_marginTop">36dp</dimen>
+    <dimen name="fragment_notification_tv_doctor_textSize" format="float" type="dimen">16.6sp
     </dimen>
 
-    <dimen name="fragment_notification_cv_doctor_card_marginTop">20dp</dimen>
+    <dimen name="fragment_notification_cv_doctor_card_marginTop">18dp</dimen>
 
-    <dimen name="fragment_notification_civ_avatar_width">65dp</dimen>
-    <dimen name="fragment_notification_civ_avatar_height">65dp</dimen>
-    <dimen name="fragment_notification_civ_avatar_marginStart">16dp</dimen>
-    <dimen name="fragment_notification_civ_avatar_marginTop">16dp</dimen>
-    <dimen name="fragment_notification_civ_avatar_marginBottom">16dp</dimen>
+    <dimen name="fragment_notification_civ_avatar_width">59dp</dimen>
+    <dimen name="fragment_notification_civ_avatar_height">59dp</dimen>
+    <dimen name="fragment_notification_civ_avatar_marginStart">14dp</dimen>
+    <dimen name="fragment_notification_civ_avatar_marginTop">14dp</dimen>
+    <dimen name="fragment_notification_civ_avatar_marginBottom">14dp</dimen>
 
-    <dimen name="fragment_notification_tv_name_width">140dp</dimen>
-    <dimen name="fragment_notification_tv_name_marginStart">21dp</dimen>
-    <dimen name="fragment_notification_tv_name_marginTop">16dp</dimen>
-    <dimen name="fragment_notification_tv_name_textSize" format="float" type="dimen">16.5sp</dimen>
+    <dimen name="fragment_notification_tv_name_width">160dp</dimen>
+    <dimen name="fragment_notification_tv_name_marginStart">19dp</dimen>
+    <dimen name="fragment_notification_tv_name_marginTop">14dp</dimen>
+    <dimen name="fragment_notification_tv_name_textSize" format="float" type="dimen">14.85sp</dimen>
 
     <dimen name="fragment_notification_tv_specialty_width">135dp</dimen>
-    <dimen name="fragment_notification_tv_specialty_height" format="float" type="dimen">16.2dp
+    <dimen name="fragment_notification_tv_specialty_height" format="float" type="dimen">14.5dp
     </dimen>
     <dimen name="fragment_notification_tv_specialty_marginTop">2dp</dimen>
-    <dimen name="fragment_notification_tv_specialty_textSize" format="float" type="dimen">15.5sp
+    <dimen name="fragment_notification_tv_specialty_textSize" format="float" type="dimen">14sp
     </dimen>
 
     <dimen name="fragment_notification_iv_star0_marginTop">9dp</dimen>
@@ -367,22 +367,22 @@
 
     <dimen name="fragment_notification_iv_star4_marginStart">5dp</dimen>
 
-    <dimen name="fragment_notification_tv_rating_height" format="float" type="dimen">17.2dp</dimen>
-    <dimen name="fragment_notification_tv_rating_marginStart">17dp</dimen>
-    <dimen name="fragment_notification_tv_rating_textSize" format="float" type="dimen">16.5sp
+    <dimen name="fragment_notification_tv_rating_height" format="float" type="dimen">15.5dp</dimen>
+    <dimen name="fragment_notification_tv_rating_marginStart">15.3dp</dimen>
+    <dimen name="fragment_notification_tv_rating_textSize" format="float" type="dimen">14.85sp
     </dimen>
 
-    <dimen name="fragment_notification_btn_confirm_height" format="float" type="dimen">53.4dp
+    <dimen name="fragment_notification_btn_confirm_height" format="float" type="dimen">48dp
     </dimen>
-    <dimen name="fragment_notification_btn_confirm_textSize" format="float" type="dimen">16.5sp</dimen>
+    <dimen name="fragment_notification_btn_confirm_textSize" format="float" type="dimen">14.85sp</dimen>
 
     <dimen name="fragment_notification_btn_cancel_request_height" format="float" type="dimen">
-        53.4dp
+        48dp
     </dimen>
-    <dimen name="fragment_notification_btn_cancel_request_marginTop">35dp</dimen>
-    <dimen name="fragment_notification_btn_cancel_request_marginBottom">22dp</dimen>
+    <dimen name="fragment_notification_btn_cancel_request_marginTop">31dp</dimen>
+    <dimen name="fragment_notification_btn_cancel_request_marginBottom">20dp</dimen>
     <dimen name="fragment_notification_btn_cancel_request_textSize" format="float" type="dimen">
-        16.5sp
+        14.85sp
     </dimen>
 
     // fragment_request
