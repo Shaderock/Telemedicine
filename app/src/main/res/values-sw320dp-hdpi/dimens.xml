@@ -52,71 +52,70 @@
 
     // activity_signup
 
-    <dimen name="activity_signup_toolbar_height">38dp</dimen>
+    <dimen name="activity_signup_toolbar_height">31dp</dimen>
 
-    <dimen name="activity_signup_tv_toolbar_title_textSize">16sp</dimen>
+    <dimen name="activity_signup_tv_toolbar_title_textSize">13sp</dimen>
 
-    <dimen name="activity_signup_btn_add_photos_width">149dp</dimen>
-    <dimen name="activity_signup_btn_add_photos_height">149dp</dimen>
-    <dimen name="activity_signup_btn_add_photos_marginTop">62dp</dimen>
-    <dimen name="activity_signup_btn_add_photos_drawablePadding">-22dp</dimen>
-    <dimen name="activity_signup_btn_add_photos_paddingTop">30dp</dimen>
-    <dimen name="activity_signup_btn_add_photos_textSize">16sp</dimen>
+    <dimen name="activity_signup_btn_add_photos_width">134dp</dimen>
+    <dimen name="activity_signup_btn_add_photos_height">134dp</dimen>
+    <dimen name="activity_signup_btn_add_photos_marginTop">56dp</dimen>
+    <dimen name="activity_signup_btn_add_photos_drawablePadding">-20dp</dimen>
+    <dimen name="activity_signup_btn_add_photos_paddingTop">27dp</dimen>
+    <dimen name="activity_signup_btn_add_photos_textSize">15sp</dimen>
 
-    <dimen name="activity_signup_tv_full_name_marginStart">20dp</dimen>
-    <dimen name="activity_signup_tv_full_name_marginTop">42dp</dimen>
-    <dimen name="activity_signup_tv_full_name_textSize">16sp</dimen>
+    <dimen name="activity_signup_tv_full_name_marginStart">17dp</dimen>
+    <dimen name="activity_signup_tv_full_name_marginTop">36dp</dimen>
+    <dimen name="activity_signup_tv_full_name_textSize">14sp</dimen>
 
-    <dimen name="activity_signup_tv_birthday_marginTop">27dp</dimen>
-    <dimen name="activity_signup_tv_birthday_textSize">16sp</dimen>
+    <dimen name="activity_signup_tv_birthday_marginTop">23dp</dimen>
+    <dimen name="activity_signup_tv_birthday_textSize">14sp</dimen>
 
-    <dimen name="activity_signup_tv_email_marginTop">27dp</dimen>
-    <dimen name="activity_signup_tv_email_textSize">16sp</dimen>
+    <dimen name="activity_signup_tv_email_marginTop">23dp</dimen>
+    <dimen name="activity_signup_tv_email_textSize">14sp</dimen>
 
-    <dimen name="activity_signup_tv_phone_number_marginTop">25dp</dimen>
-    <dimen name="activity_signup_tv_phone_number_textSize">16sp</dimen>
+    <dimen name="activity_signup_tv_phone_number_marginTop">21dp</dimen>
+    <dimen name="activity_signup_tv_phone_number_textSize">14sp</dimen>
 
-    <dimen name="activity_signup_tv_location_marginTop">27dp</dimen>
-    <dimen name="activity_signup_tv_location_textSize">16sp</dimen>
+    <dimen name="activity_signup_tv_location_marginTop">23dp</dimen>
+    <dimen name="activity_signup_tv_location_textSize">14sp</dimen>
 
-    <dimen name="activity_signup_et_full_name_height" format="float" type="dimen">53.5dp</dimen>
-    <dimen name="activity_signup_et_full_name_marginTop">15dp</dimen>
-    <dimen name="activity_signup_et_full_name_marginEnd">20dp</dimen>
-    <dimen name="activity_signup_et_full_name_paddingStart">20dp</dimen>
-    <dimen name="activity_signup_et_full_name_paddingEnd">20dp</dimen>
-    <dimen name="activity_signup_et_full_name_textSize">15sp</dimen>
+    <dimen name="activity_signup_et_full_name_height" format="float" type="dimen">45dp</dimen>
+    <dimen name="activity_signup_et_full_name_marginTop">13dp</dimen>
+    <dimen name="activity_signup_et_full_name_marginEnd">17dp</dimen>
+    <dimen name="activity_signup_et_full_name_paddingStart">17dp</dimen>
+    <dimen name="activity_signup_et_full_name_paddingEnd">17dp</dimen>
+    <dimen name="activity_signup_et_full_name_textSize">13sp</dimen>
 
-    <dimen name="activity_signup_et_birthday__height" format="float" type="dimen">53.5dp</dimen>
-    <dimen name="activity_signup_et_birthday_marginTop">15dp</dimen>
-    <dimen name="activity_signup_et_birthday_paddingStart">20dp</dimen>
-    <dimen name="activity_signup_et_birthday_paddingEnd">20dp</dimen>
-    <dimen name="activity_signup_et_birthday_textSize">15sp</dimen>
+    <dimen name="activity_signup_et_birthday__height" format="float" type="dimen">45.5dp</dimen>
+    <dimen name="activity_signup_et_birthday_marginTop">13dp</dimen>
+    <dimen name="activity_signup_et_birthday_paddingStart">17dp</dimen>
+    <dimen name="activity_signup_et_birthday_paddingEnd">17dp</dimen>
+    <dimen name="activity_signup_et_birthday_textSize">13sp</dimen>
 
-    <dimen name="activity_signup_et_email_height" format="float" type="dimen">53.5dp</dimen>
-    <dimen name="activity_signup_et_email_marginTop">15dp</dimen>
-    <dimen name="activity_signup_et_email_paddingStart">20dp</dimen>
-    <dimen name="activity_signup_et_email_paddingEnd">20dp</dimen>
-    <dimen name="activity_signup_et_email_textSize">15sp</dimen>
+    <dimen name="activity_signup_et_email_height" format="float" type="dimen">45.5dp</dimen>
+    <dimen name="activity_signup_et_email_marginTop">13dp</dimen>
+    <dimen name="activity_signup_et_email_paddingStart">17dp</dimen>
+    <dimen name="activity_signup_et_email_paddingEnd">17dp</dimen>
+    <dimen name="activity_signup_et_email_textSize">13sp</dimen>
 
-    <dimen name="activity_signup_et_phone_number_height" format="float" type="dimen">53.5dp</dimen>
-    <dimen name="activity_signup_et_phone_number_marginTop">17dp</dimen>
-    <dimen name="activity_signup_et_phone_number_paddingStart">20dp</dimen>
-    <dimen name="activity_signup_et_phone_number_paddingEnd">20dp</dimen>
-    <dimen name="activity_signup_et_phone_number_textSize">15sp</dimen>
+    <dimen name="activity_signup_et_phone_number_height" format="float" type="dimen">45.5dp</dimen>
+    <dimen name="activity_signup_et_phone_number_marginTop">13dp</dimen>
+    <dimen name="activity_signup_et_phone_number_paddingStart">17dp</dimen>
+    <dimen name="activity_signup_et_phone_number_paddingEnd">17dp</dimen>
+    <dimen name="activity_signup_et_phone_number_textSize">13sp</dimen>
 
-    <dimen name="activity_signup_et_location_height" format="float" type="dimen">53.5dp</dimen>
-    <dimen name="activity_signup_et_location_marginTop">15dp</dimen>
-    <dimen name="activity_signup_et_location_paddingStart">20dp</dimen>
-    <dimen name="activity_signup_et_location_paddingEnd">20dp</dimen>
-    <dimen name="activity_signup_et_location_textSize">15sp</dimen>
+    <dimen name="activity_signup_et_location_height" format="float" type="dimen">45.5dp</dimen>
+    <dimen name="activity_signup_et_location_marginTop">13dp</dimen>
+    <dimen name="activity_signup_et_location_paddingStart">17dp</dimen>
+    <dimen name="activity_signup_et_location_paddingEnd">17dp</dimen>
+    <dimen name="activity_signup_et_location_textSize">13sp</dimen>
 
-
-    <dimen name="activity_signup_btn_next_height">55dp</dimen>
-    <dimen name="activity_signup_btn_next_marginStart">5dp</dimen>
-    <dimen name="activity_signup_btn_next_marginTop">32dp</dimen>
-    <dimen name="activity_signup_btn_next_marginEnd">5dp</dimen>
-    <dimen name="activity_signup_btn_next_marginBottom">30dp</dimen>
-    <dimen name="activity_signup_btn_next_textSize">16sp</dimen>
+    <dimen name="activity_signup_btn_next_height">47dp</dimen>
+    <dimen name="activity_signup_btn_next_marginStart">4dp</dimen>
+    <dimen name="activity_signup_btn_next_marginTop">27dp</dimen>
+    <dimen name="activity_signup_btn_next_marginEnd">4dp</dimen>
+    <dimen name="activity_signup_btn_next_marginBottom">26dp</dimen>
+    <dimen name="activity_signup_btn_next_textSize">14sp</dimen>
 
     // activity_splash
 
