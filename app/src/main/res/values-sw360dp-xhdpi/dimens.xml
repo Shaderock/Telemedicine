@@ -464,7 +464,7 @@
     <dimen name="layout_doctor_card_civ_avatar_height">65dp</dimen>
     <dimen name="layout_doctor_card_civ_avatar_marginStart">13dp</dimen>
 
-    <dimen name="layout_doctor_card_tv_name_width">140dp</dimen>
+    <dimen name="layout_doctor_card_tv_name_width">156dp</dimen>
     <dimen name="layout_doctor_card_tv_name_marginStart">21dp</dimen>
     <dimen name="layout_doctor_card_tv_name_textSize" format="float" type="dimen">16.5sp</dimen>
 
@@ -483,7 +483,7 @@
     <dimen name="layout_doctor_card_tv_rating_marginStart">10dp</dimen>
     <dimen name="layout_doctor_card_tv_rating_textSize" format="float" type="dimen">16.5sp</dimen>
 
-    <dimen name="layout_doctor_card_iv_star_marginStart">16dp</dimen>
+    <dimen name="layout_doctor_card_iv_star_marginStart">0dp</dimen>
     <dimen name="layout_doctor_card_iv_star_marginTop">21dp</dimen>
 
     <dimen name="layout_doctor_card_iv_icon_marginStart">20dp</dimen>

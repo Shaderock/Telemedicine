@@ -49,8 +49,8 @@
 
         <TextView
             android:id="@+id/tv_specialty"
-            android:layout_width="@dimen/layout_doctor_card_tv_specialty_width"
-            android:layout_height="@dimen/layout_doctor_card_tv_specialty_height"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/layout_doctor_card_tv_specialty_marginTop"
             android:fontFamily="@font/proximanova_regular_italic"
             android:letterSpacing="0.05"
