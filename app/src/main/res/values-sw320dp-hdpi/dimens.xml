@@ -3,21 +3,21 @@
 
     // activity_home
 
-    <dimen name="activity_home_screen_bnv_navigation_height">49dp</dimen>
-    <dimen name="activity_home_screen_bnv_navigation_paddingTop">12dp</dimen>
-    <dimen name="activity_home_screen_bnv_navigation_paddingBottom">10dp</dimen>
-    <dimen name="activity_home_screen_bnv_navigation_marginTop" format="float" type="dimen">7.5dp
+    <dimen name="activity_home_screen_bnv_navigation_height">42dp</dimen>
+    <dimen name="activity_home_screen_bnv_navigation_paddingTop">10dp</dimen>
+    <dimen name="activity_home_screen_bnv_navigation_paddingBottom">0dp</dimen>
+    <dimen name="activity_home_screen_bnv_navigation_marginTop" format="float" type="dimen">6.375dp
     </dimen>
-    <dimen name="activity_home_screen_bnv_navigation_itemIconSize">26dp</dimen>
+    <dimen name="activity_home_screen_bnv_navigation_itemIconSize">24dp</dimen>
 
     <dimen name="activity_home_screen_fab_request_marginTop">3dp</dimen>
-    <dimen name="activity_home_screen_fab_request_marginBottom">7dp</dimen>
-    <dimen name="activity_home_screen_fab_request_fabCustomSize">50dp</dimen>
+    <dimen name="activity_home_screen_fab_request_marginBottom">6dp</dimen>
+    <dimen name="activity_home_screen_fab_request_fabCustomSize">43dp</dimen>
     <dimen name="activity_home_fab_request_maxImageSize">24dp</dimen>
 
-    <dimen name="activity_home_screen_v_shadow_height" format="float" type="dimen">7.5dp</dimen>
+    <dimen name="activity_home_screen_v_shadow_height" format="float" type="dimen">6.375dp</dimen>
 
-    <dimen name="activity_home_screen_coordinator_layout_height" format="float" type="dimen">56.5dp
+    <dimen name="activity_home_screen_coordinator_layout_height" format="float" type="dimen">48dp
     </dimen>
 
 

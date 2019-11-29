@@ -4,7 +4,7 @@
     // activity_home
 
     <dimen name="activity_home_screen_bnv_navigation_height">49dp</dimen>
-    <dimen name="activity_home_screen_bnv_navigation_paddingTop">12dp</dimen>
+    <dimen name="activity_home_screen_bnv_navigation_paddingTop">24dp</dimen>
     <dimen name="activity_home_screen_bnv_navigation_paddingBottom">10dp</dimen>
     <dimen name="activity_home_screen_bnv_navigation_marginTop" format="float" type="dimen">7.5dp
     </dimen>
