@@ -112,7 +112,6 @@
                             android:layout_marginStart="@dimen/fragment_doctor_details_civ_avatar_marginStart"
                             android:layout_marginTop="@dimen/fragment_doctor_details_civ_avatar_marginTop"
                             android:layout_marginBottom="@dimen/fragment_doctor_details_civ_avatar_marginBottom"
-                            android:src="@drawable/avatar"
                             app:layout_constraintBottom_toTopOf="@id/v_line"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />

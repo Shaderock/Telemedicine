@@ -91,7 +91,11 @@ public class HomeScreen extends AppCompatActivity
     @Override
     public void onCardClick(Doctor doctor)
     {
+        DoctorDetailsFragment doctorDetailsFragment = new DoctorDetailsFragment();
+        Bundle bundle = new Bundle();
+        bundle.putParcelable("clickedDoctor", doctor);
+        doctorDetailsFragment.setArguments(bundle);
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.FL_fragment_container, new DoctorDetailsFragment()).commit();
+                .replace(R.id.FL_fragment_container, doctorDetailsFragment).commit();
     }
 }

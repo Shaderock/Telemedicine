@@ -45,6 +45,7 @@ public class HomeFragment
     {
         Log.d("log", "HomeFragment: onCreateView");
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+
         recyclerView = view.findViewById(R.id.rv_doctor_list);
 
         httpRequestSender = new HttpRequestSender();

@@ -470,12 +470,12 @@
 
     <dimen name="layout_doctor_card_tv_address_height" format="float" type="dimen">16.2dp</dimen>
     <dimen name="layout_doctor_card_tv_address_marginStart">9dp</dimen>
-    <dimen name="layout_doctor_card_tv_address_marginTop">16dp</dimen>
+    <dimen name="layout_doctor_card_tv_address_marginTop">12dp</dimen>
     <dimen name="layout_doctor_card_tv_address_textSize" format="float" type="dimen">15.5sp</dimen>
 
     <dimen name="layout_doctor_card_tv_specialty_width">135dp</dimen>
     <dimen name="layout_doctor_card_tv_specialty_height" format="float" type="dimen">16.2dp</dimen>
-    <dimen name="layout_doctor_card_tv_specialty_marginTop">0dp</dimen>
+    <dimen name="layout_doctor_card_tv_specialty_marginTop">3dp</dimen>
     <dimen name="layout_doctor_card_tv_specialty_textSize" format="float" type="dimen">15.5sp
     </dimen>
 
@@ -487,7 +487,7 @@
     <dimen name="layout_doctor_card_iv_star_marginTop">21dp</dimen>
 
     <dimen name="layout_doctor_card_iv_icon_marginStart">20dp</dimen>
-    <dimen name="layout_doctor_card_iv_icon_marginTop">13dp</dimen>
+    <dimen name="layout_doctor_card_iv_icon_marginTop">12dp</dimen>
 
     <dimen name="layout_doctor_card_v_shadow_height" format="float" type="dimen">9.5dp</dimen>
 
