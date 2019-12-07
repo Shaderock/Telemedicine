@@ -4,4 +4,6 @@ public interface IHttpRequestSender
 {
     void onRegSuccess();
     void onRegFailure();
+    void onLoginSuccess();
+    void onLoginFailure();
 }

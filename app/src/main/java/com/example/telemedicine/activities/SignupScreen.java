@@ -156,4 +156,14 @@ public class SignupScreen
                 "An error occurred",
                 Toast.LENGTH_SHORT).show();
     }
+
+    @Override
+    public void onLoginSuccess()
+    {
+    }
+
+    @Override
+    public void onLoginFailure()
+    {
+    }
 }

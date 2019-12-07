@@ -1,6 +1,7 @@
 package com.example.telemedicine.helpers;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -14,6 +15,7 @@ import com.example.telemedicine.Interfaces.IHttpRequestSender;
 import com.example.telemedicine.models.Constants;
 import com.example.telemedicine.models.User;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
@@ -39,7 +41,7 @@ public class HttpRequestSender
         queue = Volley.newRequestQueue(context);
 
         StringRequest stringRequest = new StringRequest(
-                Request.Method.POST, Constants.REG_URL, /*new JSONObject(data)*//*null*//*,*/
+                Request.Method.POST, Constants.REG_URL,
                 new Response.Listener<String>()
                 {
                     @Override
@@ -87,9 +89,44 @@ public class HttpRequestSender
         queue.add(stringRequest);
     }
 
-    public void Auth()
+    public void Auth(Context context)
     {
+        queue = Volley.newRequestQueue(context);
 
+        HashMap<String, String> data = new HashMap<>();
+        data.put("Email", User.getEmail());
+        data.put("Password", User.getPassword());
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
+                Request.Method.POST, Constants.AUTH_URL, new JSONObject(data),
+                new Response.Listener<JSONObject>()
+                {
+                    @Override
+                    public void onResponse(JSONObject response)
+                    {
+                        if (iHttpRequestSender != null)
+                            iHttpRequestSender.onLoginSuccess();
+                        try
+                        {
+                            User.setToken(response.getString("Message"));
+                        } catch (JSONException e)
+                        {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener()
+        {
+            @Override
+            public void onErrorResponse(VolleyError error)
+            {
+                error.printStackTrace();
+                if (iHttpRequestSender != null)
+                    iHttpRequestSender.onLoginFailure();
+            }
+        }
+        );
+
+        queue.add(jsonObjectRequest);
     }
 
     public void UserProfile()

@@ -6,13 +6,21 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
+import com.example.telemedicine.Interfaces.IHttpRequestSender;
 import com.example.telemedicine.R;
+import com.example.telemedicine.helpers.HttpRequestSender;
+import com.example.telemedicine.models.User;
 
 public class LoginScreen extends AppCompatActivity
+        implements View.OnClickListener, IHttpRequestSender
 {
 
     private Button loginBtn, signUpBtn;
+    private EditText email, password;
+    private HttpRequestSender httpRequestSender;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -20,30 +28,77 @@ public class LoginScreen extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        email = findViewById(R.id.et_email);
+        password = findViewById(R.id.et_password);
         loginBtn = findViewById(R.id.btn_login);
         signUpBtn = findViewById(R.id.btn_sign_up);
 
-        loginBtn.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                Intent intent = new Intent(LoginScreen.this, HomeScreen.class);
-                startActivity(intent);
-                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
-                finishAffinity();
-            }
-        });
+        loginBtn.setOnClickListener(this);
+        signUpBtn.setOnClickListener(this);
 
-        signUpBtn.setOnClickListener(new View.OnClickListener()
+        httpRequestSender = new HttpRequestSender();
+        httpRequestSender.setIHttpRequestSender(this);
+    }
+
+    private void getFilledFields()
+    {
+        User.setEmail(email.getText().toString());
+        User.setPassword(password.getText().toString());
+    }
+
+    private void goToHomeScreen()
+    {
+        Intent intent = new Intent(LoginScreen.this, HomeScreen.class);
+        startActivity(intent);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+        finishAffinity();
+    }
+
+    private void goToSignupScreen()
+    {
+        Intent intent = new Intent(LoginScreen.this, SignupScreen.class);
+        startActivity(intent);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+    }
+
+    @Override
+    public void onClick(View v)
+    {
+        switch (v.getId())
         {
-            @Override
-            public void onClick(View v)
-            {
-                Intent intent = new Intent(LoginScreen.this, SignupScreen.class);
-                startActivity(intent);
-                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
-            }
-        });
+            case (R.id.btn_login):
+                getFilledFields();
+                httpRequestSender.Auth(this);
+                break;
+            case (R.id.btn_sign_up):
+                goToSignupScreen();
+                break;
+        }
+    }
+
+    @Override
+    public void onRegSuccess()
+    {
+
+    }
+
+    @Override
+    public void onRegFailure()
+    {
+
+    }
+
+    @Override
+    public void onLoginSuccess()
+    {
+        goToHomeScreen();
+    }
+
+    @Override
+    public void onLoginFailure()
+    {
+        Toast.makeText(this,
+                "An error occurred",
+                Toast.LENGTH_SHORT).show();
     }
 }
