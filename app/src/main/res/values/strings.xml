@@ -59,4 +59,7 @@
     <string name="cancel_request">Cancel Request</string>
     <string name="short_description">Short Description</string>
     <string name="doctor_details">Doctor Details</string>
+    <string name="username">Username</string>
+    <string name="your_username">Your Username</string>
+    <string name="your_password">Your Password</string>
 </resources>
