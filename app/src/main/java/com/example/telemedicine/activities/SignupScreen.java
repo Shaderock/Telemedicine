@@ -19,9 +19,11 @@ import com.example.telemedicine.R;
 import com.example.telemedicine.helpers.Base64Handler;
 import com.example.telemedicine.helpers.DateFormatConverter;
 import com.example.telemedicine.helpers.HttpRequestSender;
+import com.example.telemedicine.models.Doctor;
 import com.example.telemedicine.models.User;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import static com.example.telemedicine.models.Constants.PICK_IMAGE;
 
@@ -106,7 +108,7 @@ public class SignupScreen
         {
             case (R.id.btn_next):
                 getFilledFields();
-                httpRequestSender.Reg(this);
+                httpRequestSender.reg(this);
                 break;
             case (R.id.btn_add_photos):
                 Intent intent1 = new Intent();
@@ -166,4 +168,11 @@ public class SignupScreen
     public void onLoginFailure()
     {
     }
+
+    @Override
+    public void onGetDocListSuccess(ArrayList<Doctor> doctors)
+    {
+
+    }
+
 }

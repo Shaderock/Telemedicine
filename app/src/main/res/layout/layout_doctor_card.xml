@@ -17,7 +17,6 @@
             android:layout_width="@dimen/layout_doctor_card_civ_avatar_width"
             android:layout_height="@dimen/layout_doctor_card_civ_avatar_height"
             android:layout_marginStart="@dimen/layout_doctor_card_civ_avatar_marginStart"
-            android:src="@drawable/avatar"
             app:layout_constraintBottom_toTopOf="@id/v_shadow"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

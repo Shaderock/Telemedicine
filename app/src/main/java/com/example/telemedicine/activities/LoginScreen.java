@@ -12,7 +12,10 @@ import android.widget.Toast;
 import com.example.telemedicine.Interfaces.IHttpRequestSender;
 import com.example.telemedicine.R;
 import com.example.telemedicine.helpers.HttpRequestSender;
+import com.example.telemedicine.models.Doctor;
 import com.example.telemedicine.models.User;
+
+import java.util.ArrayList;
 
 public class LoginScreen extends AppCompatActivity
         implements View.OnClickListener, IHttpRequestSender
@@ -42,8 +45,10 @@ public class LoginScreen extends AppCompatActivity
 
     private void getFilledFields()
     {
-        User.setEmail(email.getText().toString());
-        User.setPassword(password.getText().toString());
+//        User.setEmail(email.getText().toString());
+//        User.setPassword(password.getText().toString());
+        User.setEmail("1test@mail.ru");
+        User.setPassword("1test");
     }
 
     private void goToHomeScreen()
@@ -68,7 +73,7 @@ public class LoginScreen extends AppCompatActivity
         {
             case (R.id.btn_login):
                 getFilledFields();
-                httpRequestSender.Auth(this);
+                httpRequestSender.auth(this);
                 break;
             case (R.id.btn_sign_up):
                 goToSignupScreen();
@@ -101,4 +106,12 @@ public class LoginScreen extends AppCompatActivity
                 "An error occurred",
                 Toast.LENGTH_SHORT).show();
     }
+
+    @Override
+    public void onGetDocListSuccess(ArrayList<Doctor> doctors)
+    {
+
+    }
+
+
 }

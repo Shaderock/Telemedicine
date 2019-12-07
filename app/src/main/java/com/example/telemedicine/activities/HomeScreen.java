@@ -13,6 +13,7 @@ import com.example.telemedicine.fragments_home_screen.HomeFragment;
 import com.example.telemedicine.R;
 import com.example.telemedicine.fragments_home_screen.NotificationFragment;
 import com.example.telemedicine.fragments_home_screen.RequestFragment;
+import com.example.telemedicine.models.Doctor;
 import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -47,7 +48,7 @@ public class HomeScreen extends AppCompatActivity
     private void replaceToHomeFragment()
     {
         HomeFragment homeFragment = new HomeFragment();
-        homeFragment.setiHomeFragment(this);
+        homeFragment.setIHomeFragment(this);
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.FL_fragment_container, homeFragment).commit();
     }
@@ -88,7 +89,7 @@ public class HomeScreen extends AppCompatActivity
     }
 
     @Override
-    public void onCardClick()
+    public void onCardClick(Doctor doctor)
     {
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.FL_fragment_container, new DoctorDetailsFragment()).commit();

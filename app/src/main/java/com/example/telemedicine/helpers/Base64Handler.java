@@ -1,6 +1,7 @@
 package com.example.telemedicine.helpers;
 
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.util.Base64;
 
 import java.io.ByteArrayOutputStream;
@@ -16,9 +17,12 @@ public class Base64Handler
         return Base64.encodeToString(byteArray, Base64.NO_WRAP);
     }
 
-    public String Base64ToBitmap(String string)
+    public Bitmap base64ToBitmap(String string)
     {
-        return null;
+        byte[] byteArray = Base64.decode(string, Base64.DEFAULT);
+        string.replaceAll("\\s+","");
+
+        return BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
     }
 
 }

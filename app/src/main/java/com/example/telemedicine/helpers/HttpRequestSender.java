@@ -3,21 +3,24 @@ package com.example.telemedicine.helpers;
 import android.content.Context;
 import android.util.Log;
 
-import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.telemedicine.Interfaces.IHttpRequestSender;
 import com.example.telemedicine.models.Constants;
+import com.example.telemedicine.models.Doctor;
 import com.example.telemedicine.models.User;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -36,7 +39,7 @@ public class HttpRequestSender
         this.iHttpRequestSender = iHttpRequestSender;
     }
 
-    public void Reg(Context context)
+    public void reg(Context context)
     {
         queue = Volley.newRequestQueue(context);
 
@@ -89,7 +92,7 @@ public class HttpRequestSender
         queue.add(stringRequest);
     }
 
-    public void Auth(Context context)
+    public void auth(Context context)
     {
         queue = Volley.newRequestQueue(context);
 
@@ -104,11 +107,11 @@ public class HttpRequestSender
                     @Override
                     public void onResponse(JSONObject response)
                     {
-                        if (iHttpRequestSender != null)
-                            iHttpRequestSender.onLoginSuccess();
                         try
                         {
                             User.setToken(response.getString("Message"));
+                            if (iHttpRequestSender != null)
+                                iHttpRequestSender.onLoginSuccess();
                         } catch (JSONException e)
                         {
                             e.printStackTrace();
@@ -129,22 +132,68 @@ public class HttpRequestSender
         queue.add(jsonObjectRequest);
     }
 
-    public void UserProfile()
+    public void getDocList(Context context)
+    {
+        queue = Volley.newRequestQueue(context);
+
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(
+                Request.Method.GET, Constants.DOC_LIST_URL, null,
+                new Response.Listener<JSONArray>()
+                {
+                    @Override
+                    public void onResponse(JSONArray response)
+                    {
+                        try
+                        {
+                            ArrayList<Doctor> doctors = new ArrayList<>();
+                            for (int i = 0; i < response.length(); i++)
+                            {
+                                JSONObject item = response.getJSONObject(i);
+                                Doctor doctor =
+                                        new Doctor(item.getInt("DocId"),
+                                                item.getString("FullName"),
+                                                (float) item.getDouble("Stars"),
+                                                item.getString("Specs"),
+                                                item.getString("Address"),
+                                                item.getString("About"),
+                                                item.getString("Photo"));
+                                doctors.add(doctor);
+                            }
+                            iHttpRequestSender.onGetDocListSuccess(doctors);
+                        } catch (JSONException e)
+                        {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener()
+        {
+            @Override
+            public void onErrorResponse(VolleyError error)
+            {
+                error.printStackTrace();
+            }
+        }
+        )
+        {
+            @Override
+            public Map<String, String> getHeaders()
+            {
+                HashMap<String, String> headers = new HashMap<>();
+                headers.put(Constants.CONTENT_TYPE, Constants.CONTENT_TYPE_VALUE);
+                headers.put("token", User.getToken());
+                return headers;
+            }
+        };
+
+        queue.add(jsonArrayRequest);
+    }
+
+    public void getDoc()
     {
 
     }
 
-    public void DocList()
-    {
-
-    }
-
-    public void GetDoc()
-    {
-
-    }
-
-    public void UserRequestConsultation()
+    public void userRequestConsultation()
     {
 
     }

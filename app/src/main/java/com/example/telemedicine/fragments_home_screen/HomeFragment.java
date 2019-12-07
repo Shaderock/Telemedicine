@@ -12,22 +12,26 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.telemedicine.HomeRecyclerViewAdapter;
+import com.example.telemedicine.helpers.HomeRecyclerViewAdapter;
 import com.example.telemedicine.Interfaces.CardOnClickListener;
 import com.example.telemedicine.Interfaces.IHomeFragment;
+import com.example.telemedicine.Interfaces.IHttpRequestSender;
 import com.example.telemedicine.R;
+import com.example.telemedicine.helpers.HttpRequestSender;
 import com.example.telemedicine.models.Doctor;
 
 import java.util.ArrayList;
 
-public class HomeFragment extends Fragment implements CardOnClickListener
+public class HomeFragment
+        extends Fragment
+        implements CardOnClickListener, IHttpRequestSender
 {
 
     private RecyclerView recyclerView;
     private LinearLayoutManager linearLayoutManager;
     private HomeRecyclerViewAdapter recyclerViewAdapter;
-    private ArrayList<Doctor> doctors = new ArrayList<>();
     private IHomeFragment iHomeFragment;
+    private HttpRequestSender httpRequestSender;
 
     public HomeFragment()
     {
@@ -43,49 +47,63 @@ public class HomeFragment extends Fragment implements CardOnClickListener
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         recyclerView = view.findViewById(R.id.rv_doctor_list);
 
-        getDoctors();
-        if (recyclerViewAdapter == null)
-        {
-            initRecyclerView();
-        }
+        httpRequestSender = new HttpRequestSender();
+        httpRequestSender.setIHttpRequestSender(this);
+
+        httpRequestSender.getDocList(getActivity());
+
         return view;
     }
 
-    private void getDoctors()
-    {
-        if (doctors != null)
-        {
-            doctors.clear();
-            for (int i = 0; i < 7; i++)
-            {
-                doctors.add(new Doctor("Dudung Sokmati",
-                        4.3f, "Eye Specialist",
-                        "St.Bronxlyn 212"));
-            }
-        }
-    }
-
-    private void initRecyclerView()
-    {
-        Log.d("log", "initRecyclerView: init recyclerView.");
-        linearLayoutManager = new LinearLayoutManager(getActivity());
-        recyclerView.setLayoutManager(linearLayoutManager);
-        recyclerViewAdapter = new HomeRecyclerViewAdapter(getActivity(), doctors);
-        recyclerViewAdapter.setCardOnClickListener(this);
-        recyclerView.setAdapter(recyclerViewAdapter);
-    }
-
     @Override
-    public void onClick()
+    public void onClick(Doctor doctor)
     {
         if (iHomeFragment != null)
         {
-            iHomeFragment.onCardClick();
+            iHomeFragment.onCardClick(doctor);
         }
     }
 
-    public void setiHomeFragment(IHomeFragment iHomeFragment)
+    public void setIHomeFragment(IHomeFragment iHomeFragment)
     {
         this.iHomeFragment = iHomeFragment;
+    }
+
+    @Override
+    public void onRegSuccess()
+    {
+
+    }
+
+    @Override
+    public void onRegFailure()
+    {
+
+    }
+
+    @Override
+    public void onLoginSuccess()
+    {
+
+    }
+
+    @Override
+    public void onLoginFailure()
+    {
+
+    }
+
+    @Override
+    public void onGetDocListSuccess(ArrayList<Doctor> doctors)
+    {
+        if (recyclerViewAdapter == null)
+        {
+            Log.d("log", "initRecyclerView: init recyclerView.");
+            linearLayoutManager = new LinearLayoutManager(getActivity());
+            recyclerView.setLayoutManager(linearLayoutManager);
+            recyclerViewAdapter = new HomeRecyclerViewAdapter(getActivity(), doctors);
+            recyclerViewAdapter.setCardOnClickListener(this);
+            recyclerView.setAdapter(recyclerViewAdapter);
+        }
     }
 }

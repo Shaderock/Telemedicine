@@ -1,4 +1,4 @@
-package com.example.telemedicine;
+package com.example.telemedicine.helpers;
 
 import android.content.Context;
 import android.util.Log;
@@ -12,9 +12,8 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
 import com.example.telemedicine.Interfaces.CardOnClickListener;
+import com.example.telemedicine.R;
 import com.example.telemedicine.models.Doctor;
 
 import java.util.ArrayList;
@@ -56,13 +55,17 @@ public class HomeRecyclerViewAdapter extends
         holder.specialty.setText(doctors.get(position).getSpecialty());
         holder.address.setText(doctors.get(position).getAddress());
 
-        RequestOptions requestOptions = new RequestOptions()
-                .placeholder(R.drawable.ic_launcher_background);
+        Base64Handler base64Handler = new Base64Handler();
+        holder.avatar.setImageBitmap(base64Handler.
+                base64ToBitmap(doctors.get(position).getBase64photo()));
 
-        Glide.with(context).
-                load(R.drawable.avatar)
-                .apply(requestOptions)
-                .into(holder.avatar);
+//        RequestOptions requestOptions = new RequestOptions()
+//                .placeholder(R.drawable.ic_launcher_background);
+
+//        Glide.with(context).
+//                load(R.drawable.avatar)
+//                .apply(requestOptions)
+//                .into(holder.avatar);
 
         holder.doctorCard.setOnClickListener(new CardView.OnClickListener()
         {
@@ -74,7 +77,7 @@ public class HomeRecyclerViewAdapter extends
                         " position " + position);
                 if (cardOnClickListener != null)
                 {
-                    cardOnClickListener.onClick();
+                    cardOnClickListener.onClick(doctors.get(position));
                     Log.d("log", "cardOnClickListener != null");
                 }
             }
