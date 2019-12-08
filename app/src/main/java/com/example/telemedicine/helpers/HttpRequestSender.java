@@ -188,9 +188,59 @@ public class HttpRequestSender
         queue.add(jsonArrayRequest);
     }
 
-    public void getDoc()
+    public void getDoc(Context context)
     {
+        queue = Volley.newRequestQueue(context);
 
+        StringRequest stringRequest = new StringRequest(
+                Request.Method.GET,
+                Constants.GET_DOC_URL + "/" +
+                        UserConsultationRequest.getDocId(),
+                new Response.Listener<String>()
+                {
+                    @Override
+                    public void onResponse(String response)
+                    {
+                        try
+                        {
+                            JSONObject jsonObject = new JSONObject(response);
+                            Doctor doctor =
+                                    new Doctor(jsonObject.getInt("DocId"),
+                                            jsonObject.getString("FullName"),
+                                            (float) jsonObject.getDouble("Stars"),
+                                            jsonObject.getString("Specs"),
+                                            jsonObject.getString("Address"),
+                                            jsonObject.getString("About"),
+                                            jsonObject.getString("Photo"));
+                            if (iHttpRequestSender != null)
+                                iHttpRequestSender.onGetDoctorSuccess(doctor);
+                        } catch (JSONException e)
+                        {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener()
+                {
+                    @Override
+                    public void onErrorResponse(VolleyError error)
+                    {
+                        error.printStackTrace();
+                    }
+                }
+        )
+        {
+            @Override
+            public Map<String, String> getHeaders()
+            {
+                HashMap<String, String> headers = new HashMap<>();
+                headers.put(Constants.CONTENT_TYPE, Constants.CONTENT_TYPE_VALUE);
+                headers.put("token", User.getToken());
+                return headers;
+            }
+        };
+
+        queue.add(stringRequest);
     }
 
     public void userRequestConsultation(Context context)
@@ -210,7 +260,7 @@ public class HttpRequestSender
                             UserConsultationRequest.setConsId(jsonObject.getInt("ConsId"));
                             UserConsultationRequest.setDocId(jsonObject.getInt("DocId"));
                             UserConsultationRequest.setIsConfirmed(jsonObject.getBoolean("IsConfirmed"));
-                            if(iHttpRequestSender != null)
+                            if (iHttpRequestSender != null)
                                 iHttpRequestSender.onUserConsultationRequestSuccess();
                         } catch (JSONException e)
                         {
@@ -224,7 +274,7 @@ public class HttpRequestSender
                     public void onErrorResponse(VolleyError error)
                     {
                         error.printStackTrace();
-                        if(iHttpRequestSender != null)
+                        if (iHttpRequestSender != null)
                             iHttpRequestSender.onUserConsultationRequestFailure();
                     }
                 }

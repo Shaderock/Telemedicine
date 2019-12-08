@@ -2,21 +2,20 @@ package com.example.telemedicine.fragments_home_screen;
 
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.telemedicine.helpers.HomeRecyclerViewAdapter;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.telemedicine.Interfaces.CardOnClickListener;
 import com.example.telemedicine.Interfaces.IHomeFragment;
 import com.example.telemedicine.Interfaces.IHttpRequestSender;
 import com.example.telemedicine.R;
+import com.example.telemedicine.helpers.HomeRecyclerViewAdapter;
 import com.example.telemedicine.helpers.HttpRequestSender;
 import com.example.telemedicine.models.Doctor;
 
@@ -116,6 +115,12 @@ public class HomeFragment
 
     @Override
     public void onUserConsultationRequestFailure()
+    {
+
+    }
+
+    @Override
+    public void onGetDoctorSuccess(Doctor doctor)
     {
 
     }

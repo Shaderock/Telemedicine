@@ -187,4 +187,10 @@ public class SignupScreen
 
     }
 
+    @Override
+    public void onGetDoctorSuccess(Doctor doctor)
+    {
+
+    }
+
 }

@@ -13,4 +13,5 @@ public interface IHttpRequestSender
     void onGetDocListSuccess(ArrayList <Doctor> doctors);
     void onUserConsultationRequestSuccess();
     void onUserConsultationRequestFailure();
+    void onGetDoctorSuccess(Doctor doctor);
 }

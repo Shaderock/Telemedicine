@@ -1,13 +1,13 @@
 package com.example.telemedicine.activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.telemedicine.Interfaces.IHttpRequestSender;
 import com.example.telemedicine.R;
@@ -121,6 +121,12 @@ public class LoginScreen extends AppCompatActivity
 
     @Override
     public void onUserConsultationRequestFailure()
+    {
+
+    }
+
+    @Override
+    public void onGetDoctorSuccess(Doctor doctor)
     {
 
     }

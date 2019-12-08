@@ -2,15 +2,14 @@ package com.example.telemedicine.fragments_home_screen;
 
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.fragment.app.Fragment;
 
 import com.example.telemedicine.Interfaces.IHttpRequestSender;
 import com.example.telemedicine.Interfaces.IRequestFragment;
@@ -67,7 +66,7 @@ public class RequestFragment
     {
         UserConsultationRequest.setConsId(1);
         UserConsultationRequest.setName("1test");
-        UserConsultationRequest.setDisease("picior");
+        UserConsultationRequest.setDisease("vederea");
         UserConsultationRequest.setAddress("1test");
         UserConsultationRequest.setDescription("1test");
 //        UserConsultationRequest.setName(name.getText().toString());
@@ -131,5 +130,11 @@ public class RequestFragment
         Toast.makeText(getActivity(),
                 "An error occurred",
                 Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onGetDoctorSuccess(Doctor doctor)
+    {
+
     }
 }

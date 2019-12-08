@@ -1,27 +1,24 @@
 package com.example.telemedicine.activities;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.telemedicine.BlankFragment;
 import com.example.telemedicine.Interfaces.IHomeFragment;
-import com.example.telemedicine.Interfaces.IHttpRequestSender;
 import com.example.telemedicine.Interfaces.IRequestFragment;
+import com.example.telemedicine.R;
 import com.example.telemedicine.fragments_home_screen.DoctorDetailsFragment;
 import com.example.telemedicine.fragments_home_screen.HomeFragment;
-import com.example.telemedicine.R;
 import com.example.telemedicine.fragments_home_screen.NotificationFragment;
 import com.example.telemedicine.fragments_home_screen.RequestFragment;
-import com.example.telemedicine.helpers.HttpRequestSender;
 import com.example.telemedicine.models.Doctor;
 import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
-import java.util.ArrayList;
 
 public class HomeScreen extends AppCompatActivity
         implements BottomNavigationView.OnNavigationItemSelectedListener,
@@ -34,6 +31,7 @@ public class HomeScreen extends AppCompatActivity
     private int menuItemId;
     private BottomNavigationView navigation;
     private FloatingActionButton fab;
+    private boolean hasSuccessfulRequest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -74,9 +72,17 @@ public class HomeScreen extends AppCompatActivity
         switch (item.getItemId())
         {
             case R.id.notification:
-                badgeDrawable.setVisible(false);
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.FL_fragment_container, new NotificationFragment()).commit();
+                if (hasSuccessfulRequest)
+                {
+                    badgeDrawable.setVisible(false);
+                    getSupportFragmentManager().beginTransaction()
+                            .replace(R.id.FL_fragment_container, new NotificationFragment()).commit();
+                }
+                else
+                {
+                    getSupportFragmentManager().beginTransaction()
+                            .replace(R.id.FL_fragment_container, new BlankFragment()).commit();
+                }
                 break;
             case R.id.home:
                 replaceToHomeFragment();
@@ -114,5 +120,6 @@ public class HomeScreen extends AppCompatActivity
     public void onSuccessfulRequest()
     {
         badgeDrawable.setVisible(true);
+        hasSuccessfulRequest = true;
     }
 }
