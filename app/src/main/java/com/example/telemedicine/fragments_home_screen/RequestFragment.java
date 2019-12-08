@@ -8,26 +8,128 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
+import com.example.telemedicine.Interfaces.IHttpRequestSender;
+import com.example.telemedicine.Interfaces.IRequestFragment;
 import com.example.telemedicine.R;
+import com.example.telemedicine.helpers.HttpRequestSender;
+import com.example.telemedicine.models.Doctor;
+import com.example.telemedicine.models.UserConsultationRequest;
+
+import java.util.ArrayList;
 
 
-public class RequestFragment extends Fragment
+public class RequestFragment
+        extends Fragment
+        implements View.OnClickListener, IHttpRequestSender
 {
-
+    private EditText name, disease,
+            address, description;
+    private Button request;
+    private HttpRequestSender httpRequestSender;
+    private IRequestFragment iRequestFragment = null;
 
     public RequestFragment()
     {
         // Required empty public constructor
     }
 
+    public void setIRequestFragment(IRequestFragment iRequestFragment)
+    {
+        this.iRequestFragment = iRequestFragment;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState)
     {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_request, container, false);
+        View view = inflater.inflate(R.layout.fragment_request, container, false);
+
+        name = view.findViewById(R.id.et_name);
+        disease = view.findViewById(R.id.et_desease);
+        address = view.findViewById(R.id.et_location);
+        description = view.findViewById(R.id.et_description);
+        request = view.findViewById(R.id.btn_request);
+
+        request.setOnClickListener(this);
+
+        httpRequestSender = new HttpRequestSender();
+        httpRequestSender.setIHttpRequestSender(this);
+
+        return view;
     }
 
+    private void getFilledFields()
+    {
+        UserConsultationRequest.setConsId(1);
+        UserConsultationRequest.setName("1test");
+        UserConsultationRequest.setDisease("picior");
+        UserConsultationRequest.setAddress("1test");
+        UserConsultationRequest.setDescription("1test");
+//        UserConsultationRequest.setName(name.getText().toString());
+//        UserConsultationRequest.setDisease(disease.getText().toString());
+//        UserConsultationRequest.setAddress(address.getText().toString());
+//        UserConsultationRequest.setDescription(description.getText().toString());
+        UserConsultationRequest.setDocId(1);
+        UserConsultationRequest.setIsConfirmed(false);
+    }
+
+    @Override
+    public void onClick(View v)
+    {
+        getFilledFields();
+        httpRequestSender.userRequestConsultation(getActivity());
+    }
+
+    @Override
+    public void onRegSuccess()
+    {
+
+    }
+
+    @Override
+    public void onRegFailure()
+    {
+
+    }
+
+    @Override
+    public void onLoginSuccess()
+    {
+
+    }
+
+    @Override
+    public void onLoginFailure()
+    {
+
+    }
+
+    @Override
+    public void onGetDocListSuccess(ArrayList<Doctor> doctors)
+    {
+
+    }
+
+    @Override
+    public void onUserConsultationRequestSuccess()
+    {
+        Toast.makeText(getActivity(),
+                "request successful",
+                Toast.LENGTH_SHORT).show();
+        if(iRequestFragment != null)
+            iRequestFragment.onSuccessfulRequest();
+    }
+
+    @Override
+    public void onUserConsultationRequestFailure()
+    {
+        Toast.makeText(getActivity(),
+                "An error occurred",
+                Toast.LENGTH_SHORT).show();
+    }
 }

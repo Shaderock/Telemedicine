@@ -8,19 +8,26 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.example.telemedicine.Interfaces.IHomeFragment;
+import com.example.telemedicine.Interfaces.IHttpRequestSender;
+import com.example.telemedicine.Interfaces.IRequestFragment;
 import com.example.telemedicine.fragments_home_screen.DoctorDetailsFragment;
 import com.example.telemedicine.fragments_home_screen.HomeFragment;
 import com.example.telemedicine.R;
 import com.example.telemedicine.fragments_home_screen.NotificationFragment;
 import com.example.telemedicine.fragments_home_screen.RequestFragment;
+import com.example.telemedicine.helpers.HttpRequestSender;
 import com.example.telemedicine.models.Doctor;
 import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.util.ArrayList;
+
 public class HomeScreen extends AppCompatActivity
         implements BottomNavigationView.OnNavigationItemSelectedListener,
-        FloatingActionButton.OnClickListener, IHomeFragment
+        FloatingActionButton.OnClickListener,
+        IHomeFragment, IRequestFragment
+
 {
 
     private BadgeDrawable badgeDrawable;
@@ -43,6 +50,7 @@ public class HomeScreen extends AppCompatActivity
         navigation.setOnNavigationItemSelectedListener(this);
 
         setBadge();
+
     }
 
     private void replaceToHomeFragment()
@@ -57,7 +65,7 @@ public class HomeScreen extends AppCompatActivity
     {
         menuItemId = navigation.getMenu().getItem(1).getItemId();  //0 menu item index.
         badgeDrawable = navigation.getOrCreateBadge(menuItemId);
-        badgeDrawable.setVisible(true);
+        badgeDrawable.setVisible(false);
     }
 
     @Override
@@ -66,6 +74,7 @@ public class HomeScreen extends AppCompatActivity
         switch (item.getItemId())
         {
             case R.id.notification:
+                badgeDrawable.setVisible(false);
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.FL_fragment_container, new NotificationFragment()).commit();
                 break;
@@ -82,8 +91,10 @@ public class HomeScreen extends AppCompatActivity
         switch (v.getId())
         {
             case R.id.fab_request:
+                RequestFragment requestFragment = new RequestFragment();
+                requestFragment.setIRequestFragment(this);
                 getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.FL_fragment_container, new RequestFragment()).commit();
+                        .replace(R.id.FL_fragment_container, requestFragment).commit();
                 break;
         }
     }
@@ -97,5 +108,11 @@ public class HomeScreen extends AppCompatActivity
         doctorDetailsFragment.setArguments(bundle);
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.FL_fragment_container, doctorDetailsFragment).commit();
+    }
+
+    @Override
+    public void onSuccessfulRequest()
+    {
+        badgeDrawable.setVisible(true);
     }
 }

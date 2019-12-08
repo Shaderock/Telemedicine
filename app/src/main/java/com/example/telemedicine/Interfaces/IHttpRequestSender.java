@@ -11,4 +11,6 @@ public interface IHttpRequestSender
     void onLoginSuccess();
     void onLoginFailure();
     void onGetDocListSuccess(ArrayList <Doctor> doctors);
+    void onUserConsultationRequestSuccess();
+    void onUserConsultationRequestFailure();
 }

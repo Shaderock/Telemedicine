@@ -1,7 +1,6 @@
 package com.example.telemedicine.helpers;
 
 import android.content.Context;
-import android.util.Log;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -15,6 +14,7 @@ import com.example.telemedicine.Interfaces.IHttpRequestSender;
 import com.example.telemedicine.models.Constants;
 import com.example.telemedicine.models.Doctor;
 import com.example.telemedicine.models.User;
+import com.example.telemedicine.models.UserConsultationRequest;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -193,8 +193,68 @@ public class HttpRequestSender
 
     }
 
-    public void userRequestConsultation()
+    public void userRequestConsultation(Context context)
     {
+        queue = Volley.newRequestQueue(context);
 
+        StringRequest stringRequest = new StringRequest(
+                Request.Method.POST, Constants.USER_REQUEST_CONSULTATION_URL,
+                new Response.Listener<String>()
+                {
+                    @Override
+                    public void onResponse(String response)
+                    {
+                        try
+                        {
+                            JSONObject jsonObject = new JSONObject(response);
+                            UserConsultationRequest.setConsId(jsonObject.getInt("ConsId"));
+                            UserConsultationRequest.setDocId(jsonObject.getInt("DocId"));
+                            UserConsultationRequest.setIsConfirmed(jsonObject.getBoolean("IsConfirmed"));
+                            if(iHttpRequestSender != null)
+                                iHttpRequestSender.onUserConsultationRequestSuccess();
+                        } catch (JSONException e)
+                        {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener()
+                {
+                    @Override
+                    public void onErrorResponse(VolleyError error)
+                    {
+                        error.printStackTrace();
+                        if(iHttpRequestSender != null)
+                            iHttpRequestSender.onUserConsultationRequestFailure();
+                    }
+                }
+        )
+        {
+            @Override
+            public Map<String, String> getHeaders()
+            {
+                HashMap<String, String> headers = new HashMap<>();
+                headers.put(Constants.CONTENT_TYPE, Constants.CONTENT_TYPE_VALUE);
+                headers.put("token", User.getToken());
+                return headers;
+            }
+
+            @Override
+            protected Map<String, String> getParams()
+            {
+                HashMap<String, String> params = new HashMap<>();
+
+                params.put("ConsId", String.valueOf(UserConsultationRequest.getConsId()));
+                params.put("Name", UserConsultationRequest.getName());
+                params.put("Disease", UserConsultationRequest.getDisease());
+                params.put("Address", UserConsultationRequest.getAddress());
+                params.put("Description", UserConsultationRequest.getDescription());
+                params.put("DocId", String.valueOf(UserConsultationRequest.getDocId()));
+                params.put("IsConfirmed", String.valueOf(UserConsultationRequest.isConfirmed()));
+                return params;
+            }
+        };
+
+        queue.add(stringRequest);
     }
 }

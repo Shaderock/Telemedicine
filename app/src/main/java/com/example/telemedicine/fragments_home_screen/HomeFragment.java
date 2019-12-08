@@ -107,4 +107,16 @@ public class HomeFragment
             recyclerView.setAdapter(recyclerViewAdapter);
         }
     }
+
+    @Override
+    public void onUserConsultationRequestSuccess()
+    {
+
+    }
+
+    @Override
+    public void onUserConsultationRequestFailure()
+    {
+
+    }
 }

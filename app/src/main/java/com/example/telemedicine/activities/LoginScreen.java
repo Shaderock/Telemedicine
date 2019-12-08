@@ -113,5 +113,17 @@ public class LoginScreen extends AppCompatActivity
 
     }
 
+    @Override
+    public void onUserConsultationRequestSuccess()
+    {
+
+    }
+
+    @Override
+    public void onUserConsultationRequestFailure()
+    {
+
+    }
+
 
 }

@@ -175,4 +175,16 @@ public class SignupScreen
 
     }
 
+    @Override
+    public void onUserConsultationRequestSuccess()
+    {
+
+    }
+
+    @Override
+    public void onUserConsultationRequestFailure()
+    {
+
+    }
+
 }
