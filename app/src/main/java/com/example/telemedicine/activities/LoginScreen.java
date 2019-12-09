@@ -9,16 +9,13 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.telemedicine.Interfaces.IHttpRequestSender;
+import com.example.telemedicine.Interfaces.OnLoginListener;
 import com.example.telemedicine.R;
 import com.example.telemedicine.helpers.HttpRequestSender;
-import com.example.telemedicine.models.Doctor;
 import com.example.telemedicine.models.User;
 
-import java.util.ArrayList;
-
 public class LoginScreen extends AppCompatActivity
-        implements View.OnClickListener, IHttpRequestSender
+        implements View.OnClickListener, OnLoginListener
 {
 
     private Button loginBtn, signUpBtn;
@@ -40,15 +37,15 @@ public class LoginScreen extends AppCompatActivity
         signUpBtn.setOnClickListener(this);
 
         httpRequestSender = new HttpRequestSender();
-        httpRequestSender.setIHttpRequestSender(this);
+        httpRequestSender.setOnLoginListener(this);
     }
 
     private void getFilledFields()
     {
-//        User.setEmail(email.getText().toString());
-//        User.setPassword(password.getText().toString());
-        User.setEmail("1test@mail.ru");
-        User.setPassword("1test");
+        User.setEmail(email.getText().toString());
+        User.setPassword(password.getText().toString());
+//        User.setEmail("1test@mail.ru");
+//        User.setPassword("1test");
     }
 
     private void goToHomeScreen()
@@ -82,18 +79,6 @@ public class LoginScreen extends AppCompatActivity
     }
 
     @Override
-    public void onRegSuccess()
-    {
-
-    }
-
-    @Override
-    public void onRegFailure()
-    {
-
-    }
-
-    @Override
     public void onLoginSuccess()
     {
         goToHomeScreen();
@@ -106,30 +91,5 @@ public class LoginScreen extends AppCompatActivity
                 "An error occurred",
                 Toast.LENGTH_SHORT).show();
     }
-
-    @Override
-    public void onGetDocListSuccess(ArrayList<Doctor> doctors)
-    {
-
-    }
-
-    @Override
-    public void onUserConsultationRequestSuccess()
-    {
-
-    }
-
-    @Override
-    public void onUserConsultationRequestFailure()
-    {
-
-    }
-
-    @Override
-    public void onGetDoctorSuccess(Doctor doctor)
-    {
-
-    }
-
 
 }

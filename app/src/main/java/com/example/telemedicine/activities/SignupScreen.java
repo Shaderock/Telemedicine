@@ -14,23 +14,21 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import com.example.telemedicine.Interfaces.IHttpRequestSender;
+import com.example.telemedicine.Interfaces.OnRegListener;
 import com.example.telemedicine.R;
 import com.example.telemedicine.helpers.Base64Handler;
 import com.example.telemedicine.helpers.DateFormatConverter;
 import com.example.telemedicine.helpers.HttpRequestSender;
-import com.example.telemedicine.models.Doctor;
 import com.example.telemedicine.models.User;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import static com.example.telemedicine.models.Constants.PICK_IMAGE;
 
 
 public class SignupScreen
         extends AppCompatActivity
-        implements View.OnClickListener, IHttpRequestSender
+        implements View.OnClickListener, OnRegListener
 {
 
     private Toolbar toolbar;
@@ -62,7 +60,7 @@ public class SignupScreen
         next.setOnClickListener(this);
 
         httpRequestSender = new HttpRequestSender();
-        httpRequestSender.setIHttpRequestSender(this);
+        httpRequestSender.setOnRegListener(this);
 
         dateFormatConverter = new DateFormatConverter();
     }
@@ -108,7 +106,12 @@ public class SignupScreen
         {
             case (R.id.btn_next):
                 getFilledFields();
-                httpRequestSender.reg(this);
+                if (allFieldsFilled())
+                    httpRequestSender.reg(this);
+                else
+                    Toast.makeText(this,
+                            "Please, fill all fields",
+                            Toast.LENGTH_SHORT).show();
                 break;
             case (R.id.btn_add_photos):
                 Intent intent1 = new Intent();
@@ -118,6 +121,47 @@ public class SignupScreen
                         PICK_IMAGE);
                 break;
         }
+    }
+
+    private boolean allFieldsFilled()
+    {
+        boolean result = true;
+        if (fullName.getText() == null || fullName.getText().toString().isEmpty())
+        {
+            result = false;
+            fullName.setError("Full name is required");
+        }
+        if (birthday.getText() == null || birthday.getText().toString().isEmpty())
+        {
+            result = false;
+            birthday.setError("Birthday is required");
+        }
+        if (email.getText() == null || email.getText().toString().isEmpty())
+        {
+            result = false;
+            email.setError("Email is required");
+        }
+        if (phone.getText() == null || phone.getText().toString().isEmpty())
+        {
+            result = false;
+            phone.setError("Phone number is required");
+        }
+        if (location.getText() == null || location.getText().toString().isEmpty())
+        {
+            result = false;
+            location.setError("Location is required");
+        }
+        if (username.getText() == null || username.getText().toString().isEmpty())
+        {
+            result = false;
+            username.setError("Username is required");
+        }
+        if (password.getText() == null || password.getText().toString().isEmpty())
+        {
+            result = false;
+            password.setError("Password is required");
+        }
+        return result;
     }
 
     @Override
@@ -157,40 +201,6 @@ public class SignupScreen
         Toast.makeText(this,
                 "An error occurred",
                 Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void onLoginSuccess()
-    {
-    }
-
-    @Override
-    public void onLoginFailure()
-    {
-    }
-
-    @Override
-    public void onGetDocListSuccess(ArrayList<Doctor> doctors)
-    {
-
-    }
-
-    @Override
-    public void onUserConsultationRequestSuccess()
-    {
-
-    }
-
-    @Override
-    public void onUserConsultationRequestFailure()
-    {
-
-    }
-
-    @Override
-    public void onGetDoctorSuccess(Doctor doctor)
-    {
-
     }
 
 }

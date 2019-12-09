@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.telemedicine.Interfaces.CardOnClickListener;
 import com.example.telemedicine.Interfaces.IHomeFragment;
-import com.example.telemedicine.Interfaces.IHttpRequestSender;
+import com.example.telemedicine.Interfaces.OnGetDocListListener;
 import com.example.telemedicine.R;
 import com.example.telemedicine.helpers.HomeRecyclerViewAdapter;
 import com.example.telemedicine.helpers.HttpRequestSender;
@@ -23,7 +23,7 @@ import java.util.ArrayList;
 
 public class HomeFragment
         extends Fragment
-        implements CardOnClickListener, IHttpRequestSender
+        implements CardOnClickListener, OnGetDocListListener
 {
 
     private RecyclerView recyclerView;
@@ -48,7 +48,7 @@ public class HomeFragment
         recyclerView = view.findViewById(R.id.rv_doctor_list);
 
         httpRequestSender = new HttpRequestSender();
-        httpRequestSender.setIHttpRequestSender(this);
+        httpRequestSender.setOnGetDocListListener(this);
 
         httpRequestSender.getDocList(getActivity());
 
@@ -70,30 +70,6 @@ public class HomeFragment
     }
 
     @Override
-    public void onRegSuccess()
-    {
-
-    }
-
-    @Override
-    public void onRegFailure()
-    {
-
-    }
-
-    @Override
-    public void onLoginSuccess()
-    {
-
-    }
-
-    @Override
-    public void onLoginFailure()
-    {
-
-    }
-
-    @Override
     public void onGetDocListSuccess(ArrayList<Doctor> doctors)
     {
         if (recyclerViewAdapter == null)
@@ -105,23 +81,5 @@ public class HomeFragment
             recyclerViewAdapter.setCardOnClickListener(this);
             recyclerView.setAdapter(recyclerViewAdapter);
         }
-    }
-
-    @Override
-    public void onUserConsultationRequestSuccess()
-    {
-
-    }
-
-    @Override
-    public void onUserConsultationRequestFailure()
-    {
-
-    }
-
-    @Override
-    public void onGetDoctorSuccess(Doctor doctor)
-    {
-
     }
 }

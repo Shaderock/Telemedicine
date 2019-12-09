@@ -11,19 +11,16 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
-import com.example.telemedicine.Interfaces.IHttpRequestSender;
 import com.example.telemedicine.Interfaces.IRequestFragment;
+import com.example.telemedicine.Interfaces.OnUserConsultationRequestListener;
 import com.example.telemedicine.R;
 import com.example.telemedicine.helpers.HttpRequestSender;
-import com.example.telemedicine.models.Doctor;
 import com.example.telemedicine.models.UserConsultationRequest;
-
-import java.util.ArrayList;
 
 
 public class RequestFragment
         extends Fragment
-        implements View.OnClickListener, IHttpRequestSender
+        implements View.OnClickListener, OnUserConsultationRequestListener
 {
     private EditText name, disease,
             address, description;
@@ -57,7 +54,7 @@ public class RequestFragment
         request.setOnClickListener(this);
 
         httpRequestSender = new HttpRequestSender();
-        httpRequestSender.setIHttpRequestSender(this);
+        httpRequestSender.setConsultationRequestListener(this);
 
         return view;
     }
@@ -65,14 +62,14 @@ public class RequestFragment
     private void getFilledFields()
     {
         UserConsultationRequest.setConsId(1);
-        UserConsultationRequest.setName("1test");
-        UserConsultationRequest.setDisease("vederea");
-        UserConsultationRequest.setAddress("1test");
-        UserConsultationRequest.setDescription("1test");
-//        UserConsultationRequest.setName(name.getText().toString());
-//        UserConsultationRequest.setDisease(disease.getText().toString());
-//        UserConsultationRequest.setAddress(address.getText().toString());
-//        UserConsultationRequest.setDescription(description.getText().toString());
+//        UserConsultationRequest.setName("1test");
+//        UserConsultationRequest.setDisease("vederea");
+//        UserConsultationRequest.setAddress("1test");
+//        UserConsultationRequest.setDescription("1test");
+        UserConsultationRequest.setName(name.getText().toString());
+        UserConsultationRequest.setDisease(disease.getText().toString());
+        UserConsultationRequest.setAddress(address.getText().toString());
+        UserConsultationRequest.setDescription(description.getText().toString());
         UserConsultationRequest.setDocId(1);
         UserConsultationRequest.setIsConfirmed(false);
     }
@@ -85,42 +82,12 @@ public class RequestFragment
     }
 
     @Override
-    public void onRegSuccess()
-    {
-
-    }
-
-    @Override
-    public void onRegFailure()
-    {
-
-    }
-
-    @Override
-    public void onLoginSuccess()
-    {
-
-    }
-
-    @Override
-    public void onLoginFailure()
-    {
-
-    }
-
-    @Override
-    public void onGetDocListSuccess(ArrayList<Doctor> doctors)
-    {
-
-    }
-
-    @Override
     public void onUserConsultationRequestSuccess()
     {
         Toast.makeText(getActivity(),
                 "request successful",
                 Toast.LENGTH_SHORT).show();
-        if(iRequestFragment != null)
+        if (iRequestFragment != null)
             iRequestFragment.onSuccessfulRequest();
     }
 
@@ -130,11 +97,5 @@ public class RequestFragment
         Toast.makeText(getActivity(),
                 "An error occurred",
                 Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void onGetDoctorSuccess(Doctor doctor)
-    {
-
     }
 }

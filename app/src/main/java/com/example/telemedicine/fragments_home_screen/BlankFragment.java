@@ -1,4 +1,4 @@
-package com.example.telemedicine;
+package com.example.telemedicine.fragments_home_screen;
 
 
 import android.os.Bundle;
@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
+
+import com.example.telemedicine.R;
 
 
 /**

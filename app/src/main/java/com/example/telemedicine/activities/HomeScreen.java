@@ -7,10 +7,10 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.telemedicine.BlankFragment;
 import com.example.telemedicine.Interfaces.IHomeFragment;
 import com.example.telemedicine.Interfaces.IRequestFragment;
 import com.example.telemedicine.R;
+import com.example.telemedicine.fragments_home_screen.BlankFragment;
 import com.example.telemedicine.fragments_home_screen.DoctorDetailsFragment;
 import com.example.telemedicine.fragments_home_screen.HomeFragment;
 import com.example.telemedicine.fragments_home_screen.NotificationFragment;

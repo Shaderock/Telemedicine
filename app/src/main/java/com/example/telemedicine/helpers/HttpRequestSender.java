@@ -10,7 +10,11 @@ import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.telemedicine.Interfaces.IHttpRequestSender;
+import com.example.telemedicine.Interfaces.OnGetDocListListener;
+import com.example.telemedicine.Interfaces.OnGetDoctorListener;
+import com.example.telemedicine.Interfaces.OnLoginListener;
+import com.example.telemedicine.Interfaces.OnRegListener;
+import com.example.telemedicine.Interfaces.OnUserConsultationRequestListener;
 import com.example.telemedicine.models.Constants;
 import com.example.telemedicine.models.Doctor;
 import com.example.telemedicine.models.User;
@@ -27,16 +31,45 @@ import java.util.Map;
 public class HttpRequestSender
 {
     private RequestQueue queue;
-    private IHttpRequestSender iHttpRequestSender;
+
+    private OnRegListener onRegListener;
+    private OnLoginListener onLoginListener;
+    private OnGetDocListListener onGetDocListListener;
+    private OnUserConsultationRequestListener consultationRequestListener;
+    private OnGetDoctorListener onGetDoctorListener;
 
     public HttpRequestSender()
     {
-        iHttpRequestSender = null;
+        onRegListener = null;
+        onLoginListener = null;
+        onGetDocListListener = null;
+        consultationRequestListener = null;
+        onGetDocListListener = null;
     }
 
-    public void setIHttpRequestSender(IHttpRequestSender iHttpRequestSender)
+    public void setOnRegListener(OnRegListener onRegListener)
     {
-        this.iHttpRequestSender = iHttpRequestSender;
+        this.onRegListener = onRegListener;
+    }
+
+    public void setOnLoginListener(OnLoginListener onLoginListener)
+    {
+        this.onLoginListener = onLoginListener;
+    }
+
+    public void setOnGetDocListListener(OnGetDocListListener onGetDocListListener)
+    {
+        this.onGetDocListListener = onGetDocListListener;
+    }
+
+    public void setConsultationRequestListener(OnUserConsultationRequestListener consultationRequestListener)
+    {
+        this.consultationRequestListener = consultationRequestListener;
+    }
+
+    public void setOnGetDoctorListener(OnGetDoctorListener onGetDoctorListener)
+    {
+        this.onGetDoctorListener = onGetDoctorListener;
     }
 
     public void reg(Context context)
@@ -50,8 +83,8 @@ public class HttpRequestSender
                     @Override
                     public void onResponse(String response)
                     {
-                        if (iHttpRequestSender != null)
-                            iHttpRequestSender.onRegSuccess();
+                        if (onRegListener != null)
+                            onRegListener.onRegSuccess();
                     }
                 }, new Response.ErrorListener()
         {
@@ -59,8 +92,8 @@ public class HttpRequestSender
             public void onErrorResponse(VolleyError error)
             {
                 error.printStackTrace();
-                if (iHttpRequestSender != null)
-                    iHttpRequestSender.onRegFailure();
+                if (onRegListener != null)
+                    onRegListener.onRegFailure();
             }
         }
         )
@@ -110,8 +143,8 @@ public class HttpRequestSender
                         try
                         {
                             User.setToken(response.getString("Message"));
-                            if (iHttpRequestSender != null)
-                                iHttpRequestSender.onLoginSuccess();
+                            if (onLoginListener != null)
+                                onLoginListener.onLoginSuccess();
                         } catch (JSONException e)
                         {
                             e.printStackTrace();
@@ -123,8 +156,8 @@ public class HttpRequestSender
             public void onErrorResponse(VolleyError error)
             {
                 error.printStackTrace();
-                if (iHttpRequestSender != null)
-                    iHttpRequestSender.onLoginFailure();
+                if (onLoginListener != null)
+                    onLoginListener.onLoginFailure();
             }
         }
         );
@@ -159,7 +192,8 @@ public class HttpRequestSender
                                                 item.getString("Photo"));
                                 doctors.add(doctor);
                             }
-                            iHttpRequestSender.onGetDocListSuccess(doctors);
+                            if (onGetDocListListener != null)
+                                onGetDocListListener.onGetDocListSuccess(doctors);
                         } catch (JSONException e)
                         {
                             e.printStackTrace();
@@ -212,8 +246,8 @@ public class HttpRequestSender
                                             jsonObject.getString("Address"),
                                             jsonObject.getString("About"),
                                             jsonObject.getString("Photo"));
-                            if (iHttpRequestSender != null)
-                                iHttpRequestSender.onGetDoctorSuccess(doctor);
+                            if (onGetDoctorListener != null)
+                                onGetDoctorListener.onGetDoctorSuccess(doctor);
                         } catch (JSONException e)
                         {
                             e.printStackTrace();
@@ -260,8 +294,9 @@ public class HttpRequestSender
                             UserConsultationRequest.setConsId(jsonObject.getInt("ConsId"));
                             UserConsultationRequest.setDocId(jsonObject.getInt("DocId"));
                             UserConsultationRequest.setIsConfirmed(jsonObject.getBoolean("IsConfirmed"));
-                            if (iHttpRequestSender != null)
-                                iHttpRequestSender.onUserConsultationRequestSuccess();
+                            if (consultationRequestListener != null)
+                                consultationRequestListener.
+                                        onUserConsultationRequestSuccess();
                         } catch (JSONException e)
                         {
                             e.printStackTrace();
@@ -274,8 +309,9 @@ public class HttpRequestSender
                     public void onErrorResponse(VolleyError error)
                     {
                         error.printStackTrace();
-                        if (iHttpRequestSender != null)
-                            iHttpRequestSender.onUserConsultationRequestFailure();
+                        if (consultationRequestListener != null)
+                            consultationRequestListener.
+                                    onUserConsultationRequestFailure();
                     }
                 }
         )
@@ -307,4 +343,5 @@ public class HttpRequestSender
 
         queue.add(stringRequest);
     }
+
 }

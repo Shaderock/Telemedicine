@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
-import com.example.telemedicine.Interfaces.IHttpRequestSender;
+import com.example.telemedicine.Interfaces.OnGetDoctorListener;
 import com.example.telemedicine.R;
 import com.example.telemedicine.helpers.Base64Handler;
 import com.example.telemedicine.helpers.HttpRequestSender;
@@ -23,7 +23,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class NotificationFragment
         extends Fragment
-        implements IHttpRequestSender
+        implements OnGetDoctorListener
 {
     private TextView userName, disease,
             address, description;
@@ -60,7 +60,7 @@ public class NotificationFragment
         stars.add((ImageView) view.findViewById(R.id.iv_star4));
 
         httpRequestSender = new HttpRequestSender();
-        httpRequestSender.setIHttpRequestSender(this);
+        httpRequestSender.setOnGetDoctorListener(this);
 
         setFields();
 
@@ -88,48 +88,6 @@ public class NotificationFragment
         {
             stars.get(i).setVisibility(View.VISIBLE);
         }
-    }
-
-    @Override
-    public void onRegSuccess()
-    {
-
-    }
-
-    @Override
-    public void onRegFailure()
-    {
-
-    }
-
-    @Override
-    public void onLoginSuccess()
-    {
-
-    }
-
-    @Override
-    public void onLoginFailure()
-    {
-
-    }
-
-    @Override
-    public void onGetDocListSuccess(ArrayList<Doctor> doctors)
-    {
-
-    }
-
-    @Override
-    public void onUserConsultationRequestSuccess()
-    {
-
-    }
-
-    @Override
-    public void onUserConsultationRequestFailure()
-    {
-
     }
 
     @Override
